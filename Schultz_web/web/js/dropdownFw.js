@@ -1,15 +1,16 @@
-/*Abraham Schultz
- * 1/20/2020
- * 
- * This java script hides or shows the content in the drop down menu 
- * accordingly. This code was not changed much from the sample code 
- * given.
- */
+// Declare single global function with same name as js file 
+// (in keeping with our naming convention).
+// This will be the ONLY global declaration in the file.
 
 function dropdownFw(dropHeaderStyle, dropContentStyle, hiddenRight) {
 
     var ddObj = {}; // delcare empty object (that will be returned at the end  of this function
-    ddObj.dropdown = function (subMenuId) {
+
+    // add public method to the object that will be returned to the HTML page
+    // This is the only method the HTML page needs to add to click event to each dropHeader
+    // This method/function will simply hide/show the dropcontent with the given id.
+    // it will also close any other dropcontents that happen to be open.
+    ddObj.dropdown = function (subMenuId) {  
 
         // get a reference to the dropContent that is to be opened or closed
         var ele = document.getElementById(subMenuId);
@@ -22,7 +23,9 @@ function dropdownFw(dropHeaderStyle, dropContentStyle, hiddenRight) {
     };
 
     function toggle(ele) { // hide the dropcontent if showing, show if hiding
-      
+        // Remember to test for CSS that the element is NOT at page load time (otherwise, 
+        // you'll have to use JS function getComputedStyle to get an exact match from the CSS).
+        // In other words, do not reverse the condition.
         if (ele.style.visibility === "visible") {
             hide(ele);
         } else {
@@ -52,15 +55,21 @@ function dropdownFw(dropHeaderStyle, dropContentStyle, hiddenRight) {
     // Make it so that whenever the user clicks something other than a dropHeader, 
     // all dropContents are closed. (Runs only once when page is loaded.)
     window.onclick = function (event) {
-
+        
+        // console.log("event.target will be shown next"); 
+        // console.log(event.target); // the DOM element clicked
+        // 
+        // console.log("event.target.className will be shown next");
+        // console.log(event.target.className); // the className(s) of the clicked element
+        
         // if the user clicks something besides a dropHeader...
         if (!event.target.className.includes(dropHeaderStyle)) {
-
+            
             // then close all dropContents
             hideExcept(null);
             console.log("hiding all drop contents");
         }
     };
-
+    
     return ddObj;
 }
