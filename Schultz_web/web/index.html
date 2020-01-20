@@ -3,29 +3,27 @@
  Abraham Schultz
 CIS 3308
 1/15/2020
-
-html for homepage of cooking site       
+html for homepage of burger recipe site   
+I intend to have this be a social media site for burger enthusiasts.
+You will be able to make your own account, sign in, and upload recipes.
+The database table that will be unique to this site will be the recipes, which can include images and videos of the burger,
+as well as list of ingredients. The database will be able to be queried by any of these parameters.  
 -->
-
 <html>
     <head>
-
-
+        <!-- this it the title-->
         <title>[Brahms Burgers]</title>
-
-        <link href="styles/darkTitleStyle.css" rel="stylesheet" type="text/css" />  
-        <link href="styles/_dropdownStyle.css" rel="stylesheet" type="text/css" /> 
-        <link href ="styles/responsive_multi_column.css" rel ="stylesheet" type="text/css"/>
-
+        <!--bring in style sheets-->
+        <link href="styles/mainStyle.css" rel="stylesheet" type="text/css" />  
+        <!-- using responsive design code provided in class -->
+        <link href ="styles/responsive_styles.css" rel ="stylesheet" type="text/css"/>
     </head>
     <body>
-
+        <!-- nav bar-->
         <div id="titleNav">
-
             <div id="pageTitle">
                 Brahms Burgers
             </div>
-
             <div id="nav">
                 <div class="dropdown">
                     <a><img title="Home" src="icons/dark/home_icon_H24.png" alt="Home"></a>
@@ -43,85 +41,73 @@ html for homepage of cooking site
                     <img class="dropHeader" onclick="dd.dropdown('searchDropDown')"   title="Search" src="icons/dark/search_dd_icon_H24.png" alt="Search" >
                     <div class="dropContent" id="searchDropDown">
                         <a>Users</a> <br/>
-                        <a>Cars</a> 
+                        <a>Recipes</a> 
                     </div>
                 </div>
-                <div class="dropdown">
-                    <img class="dropHeader" onclick="dd.dropdown('tutorialDropDown')" title="Tutorial" src="icons/dark/tutorial_dd_icon_H24.png" alt="Account" >
-                    <div class="dropContent" id="tutorialDropDown">
-                        <a>Proposal</a> <br/>
-                        <a>Marketing</a> <br/>
-                        <a>Demo</a> <br/>
-                        <a>Log</a> <br/>
-                    </div> 
-                </div>          
                 <div class="dropdown">
                     <a><img  title="Blog" src="icons/dark/blog_icon_H24.png" alt="Blog"></a>
                 </div>
             </div>
-
         </div>  <!-- end of titleNav -->
-
+        <!-- wrapper div for top burger icon-->
+        <div>
+            <!-- the top burger icon also links to wiki on burgers -->
+            <div id="topIcon" >
+                <div>
+                    <a  href="https://en.wikipedia.org/wiki/Hamburger" ><img id="mainIcon" title="burger" src="pics/burgerIcon.png" alt="burgerLink"></a>
+                </div>
+            </div>
+        </div>  
         <div id="content">
+            <div class='stopFloat'></div>
             <!--  intro section -->
-
             <div class="row">
-                <div class='column column66'>
-
-                    <strong>Classic Burger</strong> is the capital and largest city of both England and the United Kingdom.
-                    Standing on the River Thames in the south-east of England, at the head of its 50-mile 
-                    (80 km) estuary leading to the North Sea, London has been a major settlement for two millennia. 
-                    Londinium was founded by the Romans. The City of London (colloquially known as the Square Mile) 
-                    retains boundaries that follow closely its medieval limits.
-                </div>
-
-                <div class='column column33'>
-                    <img src='pics/Burger.jpg' alt='London'>
+                <div class='column column90'>
+                    <div>
+                        <div id="intro">
+                            <strong>Whats it all About?</strong> 
+                        </div>
+                        <p>
+                            This site is a homage to the greatest culinary contribution The United States has ever made. 
+                            The Hamburger! So come on in and make a profile! Once you have signed in you will be able to upload
+                            your very own burger recipes and pictures! Show your friends and link to social media sites!
+                        </p>
+                        <strong>Current Functionality</strong> 
+                        <ul>
+                            <li>Navigation bar</li>
+                            <li>Responsive design</li>
+                            <li>Link to Burger wikipedia (click the large burger icon)</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class='stopFloat'></div>
             </div>
-
             <div class="row">
-                <div class='column column33'>
-                    <img src='pics/giantBurger.jpg' alt='Paris'>
-                </div>
-
-                <div class='column column66'>
-                    <strong>Giant Burger</strong> is the capital and most populous city of France, with an area 
-                    41 square miles and an official estimated population of over two million 
-                    residents (as of 2019). Since the 17th century, Paris has been one of Europe's 
-                    major centers of finance, diplomacy, commerce, fashion, science, and the arts.
-                </div>
-
-                <div class='stopFloat'></div>
-            </div>
-
-            <div class="row">
-                <div class='column column66'>
-                    <strong>Egg Burger</strong> has served as the Japanese 
-                    capital since 1869. As of 2018, the Greater Tokyo Area is the most populous 
-                    metropolitan area in the world. Tokyo was formerly named Edo in 1603 
-                    by Shogun Tokugawa - it was renamed Tokyo
-                    in 1868 by emperor Meiji. Tokyo is often referred to as a city but it is officially 
-                    a "metropolitan prefecture", which combines the elements of a city 
-                    and a prefecture, a characteristic unique to Tokyo.
-                </div>
-
-                <div class='column column33'>
-                    <img src='pics/eggBurger.jpg' alt='Tokyo'>
+                <div class='column column90'>
+                    <!--image of a classic burger along with a description and an link to an article from nbc-->
+                    <div class='column column50'>
+                        <a href="https://www.nbcnews.com/better/lifestyle/8-chefs-share-their-favorite-burger-recipes-summer-ncna1009186">
+                            <img src='pics/Burger.jpg' alt='classic Burger'>
+                        </a>
+                    </div>
+                    <div class="header">
+                        <strong>Classic Burger</strong> 
+                    </div>
+                    <p>
+                        The classic Burger is an all American Staple. Usually consisting
+                        of Ground beef patty, lettuce, tomato, onion, cheese, pickles and ketchup or mustard.     
+                    </p>
                 </div>
                 <div class='stopFloat'></div>
             </div>
-        </div> <!-- content.  -->
+        </div> <!-- end content.  -->
         <div id="footer">
-            [ Abraham Schultz ]
+            <a href="https://www.linkedin.com/in/abraham-schultz-15099044/">Abraham Schultz</a>
         </div>
-
         <script src="js/dropdownFw.js"></script>
         <script>
-                        // pass to the dropdown framework the names of our two CSS styles
-                        // that define our dropdowns (header style and content style). Also 
-                        // tell it how far off to the right you want the menus to disappear.
+                        // this code was copied from the sample code provided by the professor 
+                        // it is the javascript for the dropdown menues 
                         var dd = dropdownFw("dropHeader", "dropContent", "-500px");
         </script>
     </body>
