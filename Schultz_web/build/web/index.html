@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+ Abraham Schultz
+CIS 3308
+1/15/2020
+html for homepage of burger recipe site   
+I intend to have this be a social media site for burger enthusiasts.
+You will be able to make your own account, sign in, and upload recipes.
+The database table that will be unique to this site will be the recipes, which can include images and videos of the burger,
+as well as list of ingredients. The database will be able to be queried by any of these parameters.  
+-->
+<html>
+    <head>
+        <!-- this it the title-->
+        <title>[Brahms Burgers]</title>
+        <!--bring in style sheets-->
+        <link href="styles/mainStyle.css" rel="stylesheet" type="text/css" />  
+        <!-- using responsive design code provided in class -->
+        <link href ="styles/responsive_styles.css" rel ="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!-- nav bar-->
+        <div id="titleNav">
+            <div id="pageTitle">
+                Brahms Burgers
+            </div>
+            <div id="nav">
+                <div class="dropdown">
+                    <a><img title="Home" src="icons/dark/home_icon_H24.png" alt="Home"></a>
+                </div>
+                <div class="dropdown">
+                    <img class="dropHeader" onclick="dd.dropdown('accountDropDown')" title="Account" src="icons/dark/account_dd_icon_H24.png" alt="Account" >
+                    <div class="dropContent" id="accountDropDown">
+                        <a>Register</a> <br/>
+                        <a>Log In</a> <br/>
+                        <a>Profile</a> <br/>
+                        <a>Log Out</a>
+                    </div> 
+                </div>
+                <div class="dropdown">
+                    <img class="dropHeader" onclick="dd.dropdown('searchDropDown')"   title="Search" src="icons/dark/search_dd_icon_H24.png" alt="Search" >
+                    <div class="dropContent" id="searchDropDown">
+                        <a>Users</a> <br/>
+                        <a>Recipes</a> 
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a><img  title="Blog" src="icons/dark/blog_icon_H24.png" alt="Blog"></a>
+                </div>
+            </div>
+        </div>  <!-- end of titleNav -->
+        <!-- wrapper div for top burger icon-->
+        <div>
+            <!-- the top burger icon also links to wiki on burgers -->
+            <div id="topIcon" >
+                <div>
+                    <a  href="https://en.wikipedia.org/wiki/Hamburger" ><img id="mainIcon" title="burger" src="pics/burgerIcon.png" alt="burgerLink"></a>
+                </div>
+            </div>
+        </div>  
+        <div id="content">
+            <div class='stopFloat'></div>
+            <!--  intro section -->
+            <div class="row">
+                <div class='column column90'>
+                    <div>
+                        <div id="intro">
+                            <strong>Whats it all About?</strong> 
+                        </div>
+                        <p>
+                            This site is a homage to the greatest culinary contribution The United States has ever made. 
+                            The Hamburger! So come on in and make a profile! Once you have signed in you will be able to upload
+                            your very own burger recipes and pictures! Show your friends and link to social media sites!
+                        </p>
+                        <strong>Current Functionality</strong> 
+                        <ul>
+                            <li>Navigation bar</li>
+                            <li>Responsive design</li>
+                            <li>Link to Burger wikipedia (click the large burger icon)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
+            <div class="row">
+                <div class='column column90'>
+                    <!--image of a classic burger along with a description and an link to an article from nbc-->
+                    <div class='column column50'>
+                        <a href="https://www.nbcnews.com/better/lifestyle/8-chefs-share-their-favorite-burger-recipes-summer-ncna1009186">
+                            <img src='pics/Burger.jpg' alt='classic Burger'>
+                        </a>
+                    </div>
+                    <div class="header">
+                        <strong>Classic Burger</strong> 
+                    </div>
+                    <p>
+                        The classic Burger is an all American Staple. Usually consisting
+                        of Ground beef patty, lettuce, tomato, onion, cheese, pickles and ketchup or mustard.     
+                    </p>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
+        </div> <!-- end content.  -->
+        <div id="footer">
+            <a href="https://www.linkedin.com/in/abraham-schultz-15099044/">Abraham Schultz</a>
+        </div>
+        <script src="js/dropdownFw.js"></script>
+        <script>
+                        // this code was copied from the sample code provided by the professor 
+                        // it is the javascript for the dropdown menues 
+                        var dd = dropdownFw("dropHeader", "dropContent", "-500px");
+        </script>
+    </body>
+</html>

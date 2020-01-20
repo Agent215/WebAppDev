@@ -1,0 +1,130 @@
+/*  
+Abraham Schultz
+1/19/2020
+much of this code was copied from proffessor Sally Kyvernitis, then changed to suit my needs.
+I edited a few of the values for size and color, as well as creating additional styles
+to apply to certain html sections.
+*/
+
+html, body {  
+    margin:0; 
+    padding:0; 
+}
+
+/* wrapper for the top burger icon*/
+#topIcon{
+    width: 30%;
+    padding-left: 35%;
+    padding-top: 70px;
+}
+/* for keeping the main icon responsive and placed correctly*/
+#mainIcon{
+    padding-left:0;
+    padding-top:7%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+    width: 100%;  
+}
+body { 
+    background-color: #E7C4A8;
+    color: black;  
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+}
+
+#titleNav { /* titleNav is fixed at the top */
+    position:fixed; 
+    top:0px;
+    left:0px;
+    z-index: 1;                    
+    width: 100%;    
+    background-color:#F0D665;
+    padding-bottom: 1.5%; 
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px black;  
+    min-width: 650px; 
+}
+
+#pageTitle { 
+    padding:12px;
+    padding-bottom: 0px; 
+    font-size:46px;
+    font-style: normal;
+    font-family: Impact, Charcoal, sans-serif;
+    letter-spacing: 2.5px; 
+    float: left;
+}
+
+/* styling for intro text */
+#intro {
+    padding: 0px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.header{
+    font-size: 30px;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+#nav { /* nav bar in top right*/
+    float:right;
+    font-size:24px;
+    padding-top:30px;
+}
+
+#nav a {  
+    text-decoration:none;  
+    color: #C8C8C8; 
+}
+/*make sure content is not hidden by header and footer*/
+#content { 
+    padding:12px;
+    padding-top: 10px; 
+    padding-bottom: 40px; 
+}
+
+/* style for dropdown menu buttons*/
+.dropdown {
+    position: relative;  
+    display: inline-block;
+    margin-right: 1ex;
+    cursor: pointer;
+}
+
+/* don't delete this even though there are no style rules - js needs it, references it. */
+.dropHeader {
+}
+
+/*this is the style for the navbar dropdown content */
+.dropContent {
+    background-color:black;
+    right:0px;
+    position: absolute;
+    font-size: 14px;
+    z-index: 3;
+    padding: 8px;
+    line-height: 1.7em;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    right: -500px;  
+    visibility: hidden; 
+    transition: right 0.5s ease 0s;
+}
+
+#footer { 
+    position: fixed;
+    bottom: 0px; 
+    left: 0px; 
+    z-index: 1;
+    background-color:#F0D665;
+    color: black; 
+    width:100%;
+    text-align:center;
+    padding:1.25%;	
+    box-shadow: 0px 0px 5px black; 
+}

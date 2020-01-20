@@ -1,0 +1,59 @@
+/*
+Abraham Schultz
+1/19/2020
+much of this code was copied from proffessor Sally Kyvernitis.
+I edited a few of the values for size and color.
+All of myStyle.css applies to Mobile and Desktop */
+
+.row {
+    box-sizing: border-box; 
+    width: 100%;
+    padding: 2ex 0ex;  
+    background-color: #CAEAA7; 
+    margin-bottom: 2ex; 
+    box-shadow: 5px 5px 5px grey;
+}
+.column {
+    box-sizing: border-box; 
+    padding: 1ex 2ex; 
+}
+
+.column img {
+    width:100%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+/* ------------ Desktop Only Styles --------------- */
+@media screen and (min-width: 768px) {
+
+    .column {
+        float: left;
+    }
+
+    .column25 {
+        width: 25%;
+    }
+    .column33 {
+        width: 33%;
+    }
+    .column50 {
+        width: 50%;
+    }
+    .column66 {
+        width: 66%;
+    }
+    .column75 {
+        width: 75%;
+    }
+
+    /*i added a 90% screen column for use with text that should cover the whole screen*/
+    .column90{
+        width: 90%;
+    }
+
+    .stopFloat { /* prevents elements below stopFloat from floating up above the stopFloat */
+        clear: both;
+    }
+
+} 
