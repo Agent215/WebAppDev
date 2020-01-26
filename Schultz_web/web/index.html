@@ -17,98 +17,100 @@ as well as list of ingredients. The database will be able to be queried by any o
         <link href="styles/mainStyle.css" rel="stylesheet" type="text/css" />  
         <!-- using responsive design code provided in class -->
         <link href ="styles/responsive_styles.css" rel ="stylesheet" type="text/css"/>
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     </head>
     <body>
         <!-- nav bar-->
         <div id="titleNav">
             <div id="pageTitle">
                 Brahms Burgers
-            </div>
-            <div id="nav">
+            </div>     
+            <div class = "topnav" id="nav">
                 <div class="dropdown">
-                    <a><img title="Home" src="icons/dark/home_icon_H24.png" alt="Home"></a>
+                    <a href="#/home"><img title="Home" src="icons/dark/home_icon_H24.png" alt="Home"></a>
                 </div>
                 <div class="dropdown">
-                    <img class="dropHeader" onclick="dd.dropdown('accountDropDown')" title="Account" src="icons/dark/account_dd_icon_H24.png" alt="Account" >
+                    <img class="dropHeader" onclick="dd.toggle(this)" title="Account" src="icons/dark/account_dd_icon_H24.png" alt="Account" >
                     <div class="dropContent" id="accountDropDown">
-                        <a>Register</a> <br/>
-                        <a>Log In</a> <br/>
-                        <a>Profile</a> <br/>
-                        <a>Log Out</a>
+                        <a href ="#/register">Register</a> <br/>
+                        <a href ="#/login">Log In</a> <br/>
+                        <a href ="#/profile">Profile</a> <br/>
+                        <a href ="#/logout">Log Out</a>
                     </div> 
                 </div>
                 <div class="dropdown">
-                    <img class="dropHeader" onclick="dd.dropdown('searchDropDown')"   title="Search" src="icons/dark/search_dd_icon_H24.png" alt="Search" >
+                    <img class="dropHeader" onclick="dd.toggle(this)"   title="Search" src="icons/dark/search_dd_icon_H24.png" alt="Search" >
                     <div class="dropContent" id="searchDropDown">
-                        <a>Users</a> <br/>
-                        <a>Recipes</a> 
+                        <a href ="#/users">Users</a> <br/>
+                        <a href ="#/recipes">Recipes</a> 
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a><img  title="Blog" src="icons/dark/blog_icon_H24.png" alt="Blog"></a>
+                    <a href="#/blog"><img  title="Blog" src="icons/dark/blog_icon_H24.png" alt="Blog"></a>
                 </div>
             </div>
         </div>  <!-- end of titleNav -->
         <!-- wrapper div for top burger icon-->
         <div>
             <!-- the top burger icon also links to wiki on burgers -->
-            <div id="topIcon" >
-                <div>
-                    <a  href="https://en.wikipedia.org/wiki/Hamburger" ><img id="mainIcon" title="burger" src="pics/burgerIcon.png" alt="burgerLink"></a>
-                </div>
-            </div>
+
         </div>  
         <div id="content">
-            <div class='stopFloat'></div>
-            <!--  intro section -->
-            <div class="row">
-                <div class='column column90'>
-                    <div>
-                        <div id="intro">
-                            <strong>Whats it all About?</strong> 
-                        </div>
-                        <p>
-                            This site is a homage to the greatest culinary contribution The United States has ever made. 
-                            The Hamburger! So come on in and make a profile! Once you have signed in you will be able to upload
-                            your very own burger recipes and pictures! Show your friends and link to social media sites!
-                        </p>
-                        <strong>Current Functionality</strong> 
-                        <ul>
-                            <li>Navigation bar</li>
-                            <li>Responsive design</li>
-                            <li>Link to Burger wikipedia (click the large burger icon)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class='stopFloat'></div>
-            </div>
-            <div class="row">
-                <div class='column column90'>
-                    <!--image of a classic burger along with a description and an link to an article from nbc-->
-                    <div class='column column50'>
-                        <a href="https://www.nbcnews.com/better/lifestyle/8-chefs-share-their-favorite-burger-recipes-summer-ncna1009186">
-                            <img src='pics/Burger.jpg' alt='classic Burger'>
-                        </a>
-                    </div>
-                    <div class="header">
-                        <strong>Classic Burger</strong> 
-                    </div>
-                    <p>
-                        The classic Burger is an all American Staple. Usually consisting
-                        of Ground beef patty, lettuce, tomato, onion, cheese, pickles and ketchup or mustard.     
-                    </p>
-                </div>
-                <div class='stopFloat'></div>
-            </div>
+
+
+            <!-- Display content HTML here via java script routing -->
+
+
         </div> <!-- end content.  -->
         <div id="footer">
             <a href="https://www.linkedin.com/in/abraham-schultz-15099044/">Abraham Schultz</a>
         </div>
         <script src="js/dropdownFw.js"></script>
+
+        <script src="js/routeFw.js"></script>
+        <script src="js/components/blog.js"></script>
+        <script src="js/components/recipes.js"></script>
+        <script src="js/components/home.js"></script>
+        <script src="js/components/users.js"></script>
+        <script src="js/components/register.js"></script>
+        <script src="js/components/login.js"></script>
+        <script src="js/components/logout.js"></script>
+        <script src="js/components/profile.js"></script>
+
         <script>
-                        // this code was copied from the sample code provided by the professor 
-                        // it is the javascript for the dropdown menues 
-                        var dd = dropdownFw("dropHeader", "dropContent", "-500px");
+                "use strict";
+                var myRoutes = [];
+
+                myRoutes['#/'] = home;  // on page reload, function home will run
+                myRoutes['#/home'] = home; // function home
+                myRoutes['#/recipes'] = recipes; // funtion recipes
+                myRoutes['#/users'] = users; // function users
+                myRoutes['#/blog'] = blog; // function blog
+                myRoutes['#/login'] = login; // function login
+                myRoutes['#/logout'] = logout; // function logout
+                myRoutes['#/profile'] = profile; // function profile
+                myRoutes['#/register'] = register; // function register
+
+                // routeFw returns a routing object that has private and public 
+                // data members and methods. 
+                // As input parameter, it takes an object with properties you can set 
+                // or just accept whatever defaults are set by the framework.
+                var myRoutes = routeFw({
+                    routeArray: myRoutes,
+                    contentId: "content"
+                });
+
+                // print the routes (check console.log)
+                myRoutes.printRoutes();
+
+                var dd = dropDownFw({
+                    dropContentStyle: "dropContent",
+                    hiddenRight: "-500px"
+                });
         </script>
+  
     </body>
 </html>
