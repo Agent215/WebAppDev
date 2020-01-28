@@ -24,13 +24,8 @@ All of myStyle.css applies to Mobile and Desktop */
     box-shadow: 5px 5px 5px grey;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
-.icon {
-  display: none;
-}
-
 /* ------------ Desktop Only Styles --------------- */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
 
     .column {
         float: left;
