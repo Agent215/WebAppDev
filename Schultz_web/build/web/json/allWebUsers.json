@@ -1,0 +1,79 @@
+[
+    {
+        "webUserId": "1",
+        "userEmail": "abraham.schultz@gmail.com",
+        "userPassword": "pw",
+        "image": "data:image/jpeg;base64,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",
+        "birthday": "11/22/2001",
+        "membershipFee": "",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "2",
+        "userEmail": "Gene@temple.edu",
+        "userPassword": "p",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_user/gene.jpg",
+        "birthday": "",
+        "membershipFee": "$1,000.99",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "228",
+        "userEmail": "salacious",
+        "userPassword": "pass",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_user/sally.jpg",
+        "birthday": "01/02/2003",
+        "membershipFee": "$123.45",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "329",
+        "userEmail": "Tony@temple.edu",
+        "userPassword": "pw",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_user/tony.jpg",
+        "birthday": "01/02/2009",
+        "membershipFee": "$123.67",
+        "userRoleId": "2",
+        "userRoleType": "View",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "343",
+        "userEmail": "karl.harris@temple.edu",
+        "userPassword": "pawpaw",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_user/karl.jpg",
+        "birthday": "04/05/2015",
+        "membershipFee": "$5.00",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "345",
+        "userEmail": "rose.mcginnis@temple.edu",
+        "userPassword": "password",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_user/rose.jpg",
+        "birthday": "04/14/1997",
+        "membershipFee": "$0.00",
+        "userRoleId": "1",
+        "userRoleType": "Admin",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "346",
+        "userEmail": "claudia@gmail.com",
+        "userPassword": "tasos",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_user/claudia.jpg",
+        "birthday": "02/02/1997",
+        "membershipFee": "$9.99",
+        "userRoleId": "1",
+        "userRoleType": "Admin",
+        "errorMsg": ""
+    }
+]

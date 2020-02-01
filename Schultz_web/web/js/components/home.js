@@ -34,24 +34,7 @@ function home(id) {
                 </div>
                 <div class='stopFloat'></div>
             </div>
-            <div class="row">
-                <div class='column column90'>
-                    <!--image of a classic burger along with a description and an link to an article from nbc-->
-                    <div class='column column50'>
-                        <a href="https://www.nbcnews.com/better/lifestyle/8-chefs-share-their-favorite-burger-recipes-summer-ncna1009186">
-                            <img src='pics/Burger.jpg' alt='classic Burger'>
-                        </a>
-                    </div>
-                    <div class="header">
-                        <strong>Classic Burger</strong> 
-                    </div>
-                    <p>
-                        The classic Burger is an all American Staple. Usually consisting
-                        of Ground beef patty, lettuce, tomato, onion, cheese, pickles and ketchup or mustard.     
-                    </p>
-                </div>
-                <div class='stopFloat'></div>
-            </div>
+            
     `;
     document.getElementById(id).innerHTML = content;
 }
