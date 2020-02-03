@@ -6,7 +6,14 @@ burgers.display = function (id) {
     var content = `  
      <style>
            
+           #searchBar{
+            
+            size="4";
+           
+            }
+           
             h1 {
+                text-align: center;
                 padding-top: 70px;
             }
     
@@ -18,7 +25,7 @@ burgers.display = function (id) {
      </style>
       <p>
         <h1>
-       
+            Find a Burger!
         </h1>
          <div id="listHere" class="clickSort"></div>
       </p>
@@ -45,7 +52,7 @@ burgers.display = function (id) {
         for (var i = 0; i < list.length; i++) {
             burgerList[i] = {};
             
-            burgerList[i].burgerName = list[i].burgerName;
+            burgerList[i].burgerName = list[i].burgerName + "</p>Likes: <p>"+ list[i].likes;
             burgerList[i].image = "<img  src='" + list[i].image + "'>";
             burgerList[i].description = list[i].description;
             //combine the user email and type in to one column

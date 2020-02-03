@@ -64,9 +64,7 @@ function MakeTable(list, id, sortOrderPropName) {
     // Add data as th or td (based on eleType) to row of HTML table.
     function addToRow(eleType, row, data, align, classid) {
         var ele = document.createElement(eleType);
-        var id = classid;
         ele.innerHTML = data;
-        ele.className = id;
         ele.style.textAlign = align;
         row.appendChild(ele);
         return ele;  // future code may need a reference to this dom object
@@ -79,14 +77,6 @@ function MakeTable(list, id, sortOrderPropName) {
         if (isNaN(val) && (!isNaN(parsedDate))) {
             return "center";
         }
-
-        // check if numeric (remove $ and , and then check if numeric)
-        var possibleNum = val.replace("$", "");
-        possibleNum = possibleNum.replace(",", "");
-        if (isNaN(possibleNum)) {
-            return "left";
-        }
-        return "right"; // it's a number
 
     } // alignment
 

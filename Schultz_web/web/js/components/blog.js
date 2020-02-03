@@ -10,11 +10,12 @@ var content = `
             }
             h1 {
                 margin-left: 0em;
-                padding-top: 70px;
+                font-size:46px;
+                padding-top: 80px;
             }
         </style>
 
-        <div style="margin-left:0em" ;>
+          <div style="margin-left:0em" ;>
 
             <h1>Development Blog</h1>
 
@@ -79,13 +80,46 @@ var content = `
                 </div>
                 <div class='stopFloat'></div>
             </div>
-        </p>
+    
+     <div class="row">
+                <div class='column column90'>
+                    <div>
+                         <h2>HW 3 Display Data</h2>
+                        <p>
+                            In this homework I learned about JSON and AJAX. JSON (JavaScript Object Notation)
+                             is an important part of a web developers toolkit because it offers a way to send data in an easy to read and easy to parse format.
+                             It looks very much like javascript objects so that makes it easy for a javascript programer
+                             to understand how they work. And That also enables easy parsing into javascript objects which can then be used like regular arrays of objects. 
+                        </p>
+                        <p>
+                         AJAX (asynchronous JavaScript and XML) is great because it allows developers to call data from sources
+                         without having to reload the entire page. You can make an AJAX call and have the rest of the site still operating
+                         like normal while the component that needs the data waits.
+                        </p>
+                        <p>
+                        The parts i found easy were setting up the JSON file with data. Also making the basic table was pretty simple.
+                        The hardest part was getting the click sorting and sort by filtered search to work together correctly. I also 
+                        found the part where i had to combine the various JSON fields into one data element on the table confusing. 
+                        I was unsure how to make sure that the individual columns for each data table were not duplicated.
+                        I eventually figured it by careful inspection of the routing example 18.
+                        </p>
+                        <p>
+                        To see the data displayed, click the menu items under the search icon 
+                        in the navigation bar. Later in the semester these links will show live data 
+                        from my database, but for now, they just show data from a hard coded JSON file.
+                        </p>
+
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
+        
 
 
-       
+  
 
     </div>
     `;
         // get rid of burger image when we change to blog
         document.getElementById(id).innerHTML = content;
-}
+        }

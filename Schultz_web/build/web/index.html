@@ -44,7 +44,7 @@ as well as list of ingredients. The database will be able to be queried by any o
                 <div class="dropdown">
                     <img class="dropHeader" onclick="dd.toggle(this)"   title="Search" src="icons/dark/search_dd_icon_H24.png" alt="Search" >
                     <div class="dropContent" id="searchDropDown">
-                        <a href="#/users">Users</a> <br/>
+                        <a href="#/chefs">Chefs</a> <br/>
                         <a href="#/burgers">Burgers</a> 
                     </div>
                 </div>
@@ -68,7 +68,7 @@ as well as list of ingredients. The database will be able to be queried by any o
         <script src="js/components/blog.js"></script>
         <script src="js/components/burgers.js"></script>
         <script src="js/components/home.js"></script>
-        <script src="js/components/users.js"></script>
+        <script src="js/components/chefs.js"></script>
         <script src="js/components/profile.js"></script>
         <script src="js/components/logout.js"></script>
         <script src="js/components/login.js"></script>
@@ -82,7 +82,7 @@ as well as list of ingredients. The database will be able to be queried by any o
                         myRoutes['#/'] = home;  // on page reload, function home will run
                         myRoutes['#/home'] = home; // function home
                         myRoutes['#/burgers'] = burgers.display; // function burgers
-                        myRoutes['#/users'] = users; // function users
+                        myRoutes['#/chefs'] = chefs; // function users
                         myRoutes['#/blog'] = blog; // function blog
                         myRoutes['#/login'] = login; // function login
                         myRoutes['#/logout'] = logout; // function logout

@@ -29,6 +29,9 @@ function home(id) {
                             <li>Responsive design</li>
                             <li>java script routing between nav bar links</li>
                             <li>Link to Burger wikipedia (click the large burger icon)</li>
+                            <li>Data tables for Chefs and Burgers</li>
+                            <li>Data tables are click sortable</li>
+                            <li>Data tables sortable by search field</li>
                         </ul>
                     </div>
                 </div>

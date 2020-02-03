@@ -8,9 +8,10 @@ All of myStyle.css applies to Mobile and Desktop */
 .row {
     box-sizing: border-box; 
     width: 100%;
-    padding: 2ex 0ex;  
+    padding: 2ex 0ex;
+    padding-bottom: 10px;
     background-color: #CAEAA7; 
-    margin-bottom: 2ex; 
+    margin-bottom: 4ex; 
     box-shadow: 5px 5px 5px grey;
 }
 .column {

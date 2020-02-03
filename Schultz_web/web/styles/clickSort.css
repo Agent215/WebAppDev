@@ -9,9 +9,11 @@
     margin:auto;     /* auto makes left and right margins the same, means centered */
     margin-top: 1em; /* em means size of capital M */
     padding-bottom: 20px;
-    width: 70%;
+    width: 60%;
+    text-align:left;
 }
 
+    
 .clickSort td {  /* applies to any <td> tag in any element classed "clickSort" */
     padding: 4px;
     background-color: #CAEAA7;
@@ -23,6 +25,7 @@
     padding:4px;
     padding-top:8px;
     background-color: #CAEAA7;
+    text-align: left;
     color: black;
     font-weight: bold;
     font-size:16px;
