@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>flip card combined with typewriter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href ="style/flipStyle.css" rel ="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>Flipcard typewriter test</div>
+        <div id='main' class="flip-card"  tabindex="1" >
+            <div id ="inner" class="flip-card-inner">
+                <div id ='front' class="flip-card-front">
+                    <img src="pics/burgerIcon.png" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div id='back' class="flip-card-back">
+                    <h1 id="name"></h1>
+                    <p id="job"></p>
+                    <p id="text"></p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            var i = 0;
+            var j = 0;
+            var n = 0;
+
+            // these are hard coded for now. we will use json later to bring in the text
+            var nameText = 'Brahms Burgers';
+            var jobText = 'Come on in and check out the awesome burgers';
+            var textText = 'If you cant find a burger you like here, then add one!';
+            var speed = 50;
+
+            //grab the card for enven listeners
+            var myElement = document.getElementById("main");
+
+            // type writer function types data
+            // for now it has hardcoded values
+            //but later i could have it take a param
+            // object as input and iterate over the elemnts within
+            function typeWriter() {
+
+                console.log("typeWriter function active");
+                if (i < nameText.length) {
+                    document.getElementById("name").innerHTML += nameText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } else
+                if (j < jobText.length) {
+
+                    document.getElementById("job").innerHTML += jobText.charAt(j);
+                    j++;
+                    setTimeout(typeWriter, speed);
+                } else
+                if (n < textText.length) {
+                    document.getElementById("text").innerHTML += textText.charAt(n);
+                    n++;
+                    setTimeout(typeWriter, speed);
+                }
+
+            } // end typewriter
+
+            // resets text
+            // hardcoded for now
+            // ideally show be paramaterized
+            function resetText() {
+
+                console.log("reseting text");
+                document.getElementById("name").innerHTML = "";
+                document.getElementById("job").innerHTML = "";
+                document.getElementById("text").innerHTML = "";
+                i = 0;
+                j = 0;
+                n = 0;
+            }
+
+            // Event handler for when we are focusing on this card to start typing text
+            myElement.addEventListener('mouseover', function () {
+                typeWriter();
+            }
+            );
+
+
+            // Event handler to reset text if we focus elsewhere
+            myElement.addEventListener('mouseout', function () {
+                resetText();
+            }
+            );
+
+
+
+
+        </script>
+    </body>
+</html>
