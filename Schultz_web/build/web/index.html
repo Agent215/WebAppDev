@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
- Abraham Schultz
+Abraham Schultz
 CIS 3308
 1/15/2020
 html for homepage of burger recipe site   
@@ -21,7 +21,7 @@ as well as list of ingredients. The database will be able to be queried by any o
     </head>
     <body>
         <!-- nav bar-->
-        <div id="titleNav">
+        <div class="titleNav">
             <div id="pageTitle">
                 Brahms Burgers
             </div>
@@ -48,6 +48,14 @@ as well as list of ingredients. The database will be able to be queried by any o
                         <a href="#/burgers">Burgers</a> 
                     </div>
                 </div>
+                <div class="dropdown">
+                    <img class="dropHeader" title="Tutorial"  onclick="dd.toggle(this)" src="icons/dark/tutorial_dd_icon_H24.png" alt="Account" >
+                    <div class="dropContent" id="tutorialDropDown">
+                        <a  href='tutorial/proposal.pdf'>Proposal</a> <br/>
+                        <a  href='tutorial/poc.html'>Proof Of Concept</a> <br/>    
+
+                    </div> 
+                </div>       
                 <div class="dropdown">
                     <a href="#/blog"><img  title="Blog" src="icons/dark/blog_icon_H24.png" alt="Blog"></a>
                 </div>
@@ -79,10 +87,10 @@ as well as list of ingredients. The database will be able to be queried by any o
                         "use strict";
                         var myRoutes = [];
 
-                        myRoutes['#/'] = home;  // on page reload, function home will run
-                        myRoutes['#/home'] = home; // function home
+                        myRoutes['#/'] = home.display;  // on page reload, function home will run
+                        myRoutes['#/home'] = home.display; // function home
                         myRoutes['#/burgers'] = burgers.display; // function burgers
-                        myRoutes['#/chefs'] = chefs; // function users
+                        myRoutes['#/chefs'] = chefs; // function chefs
                         myRoutes['#/blog'] = blog; // function blog
                         myRoutes['#/login'] = login; // function login
                         myRoutes['#/logout'] = logout; // function logout

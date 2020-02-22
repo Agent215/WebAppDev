@@ -22,7 +22,7 @@ function ajax(url, callBackSuccess, errorId) {
 
     // dataReady will be invoked by the browser about 4 times (ready state = 1, 2, 3, 4. 
     // (because this is the name specified in the http request onreadystatechange property. 
-    function dataReady () {
+    function dataReady() {
 
         // readyState 4 means that the http request is complete
         if (httpReq.readyState === 4) {

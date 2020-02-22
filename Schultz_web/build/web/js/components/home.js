@@ -1,7 +1,9 @@
-function home(id) {
 
-    // ` this is a "back tick". Use it to define multi-line strings in JavaScript.
-    var content = `
+var home = {};
+        home.display = function(id) {
+
+// ` this is a "back tick". Use it to define multi-line strings in JavaScript.
+        var content = `
      <div id="topIcon" >
                 <div>
                     <a  href="https://en.wikipedia.org/wiki/Hamburger" ><img id="mainIcon" title="burger" src="pics/burgerIcon.png" alt="burgerLink"></a>
@@ -39,5 +41,5 @@ function home(id) {
             </div>
             
     `;
-    document.getElementById(id).innerHTML = content;
-}
+                document.getElementById(id).innerHTML = content;
+        };

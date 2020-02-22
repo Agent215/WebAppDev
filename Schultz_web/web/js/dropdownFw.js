@@ -19,7 +19,7 @@
 // Note: you have to use the "visibility" (hidden/visible) rather than "display" (none/block) 
 // if you want to use transitions/animation on the open/close of the dropdown content elements. 
 
-function dropDownFw (params) {
+function dropDownFw(params) {
 
     // This is the classname of the drop down header menus (check style sheet and nav bar).
     var dropHeaderStyle = params.dropHeaderStyle || "dropHeader";
@@ -92,7 +92,7 @@ function dropDownFw (params) {
 
     // Close all dropdown content menus whenever the user clicks anything but a drop down header
     window.onclick = function (event) {
-        if (!event.target.matches('.'+dropHeaderStyle)) {
+        if (!event.target.matches('.' + dropHeaderStyle)) {
             hideAllDropContents();
             console.log("hiding all drop contents");
         } else {

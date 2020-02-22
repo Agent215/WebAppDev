@@ -4,15 +4,26 @@ function blog(id) {
 var content = `  
     
         <style>
+    
+    
+       @media screen and (max-width: 390px) 
+                {
+            h1 {
+                text-align: left;
+                padding-top: 120px;
+            }}
+    @media screen and (min-width: 390px) 
+                {
+            h1 {
+                text-align: left;
+                padding-top: 70px;
+            }
+    }
             h2 {
                 margin-left: 0em;
                 padding-top: 0px;
             }
-            h1 {
-                margin-left: 0em;
-                font-size:46px;
-                padding-top: 80px;
-            }
+            
         </style>
 
           <div style="margin-left:0em" ;>
@@ -115,8 +126,62 @@ var content = `
             </div>
         
 
+<div class="row">
+                <div class='column column90'>
+                    <div>
+                         <h2>HW 4 Tutorial Proposal</h2>
+                        <p>
+                            In this homework i learned about a few neat effects from W3Schools how to page
+                            I learned how to create using css and javascript a cool flip card effect.
+                            I also learned how to create an typewriter animation effect using javascript.
+                            Lastly i learned how to create cool looking rating stars using HTML and css links.
+                        </p>
+                        <p>
+                        
+                        </p>
+                        <p>
+                            The easy part was choosing my effects. Also getting the card to flip was pretty straight forward.
+                            The part i found some what challenging was getting the typewriter text to only work once
+                            the card has flipped over. And then getting it to disapear once the card is flipped back.
+                        </p>
+                        <p>
+                        To see the PDF of the proposal click <a href="tutorial/proposal.pdf">here</a>. to see the proof of concept of the tutorial click <a href="tutorial/poc.html">here</a>.
+                       
+                        </p>
 
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
   
+            <div class="row">
+                <div class='column column90'>
+                    <div>
+                         <h2>HW 5 Web Api</h2>
+                        <p>
+                            In this homework I learned about how to implement a simple web API framework. 
+                            This API utilizes .JSP files (java server pages) to call java classes without needing a main method. These Java classes are used to parse and format JSON data using the GSON library.
+                             I also learned how to use the my-sql library to call inline SQL statements 
+                             from the java classes. Finally using what i learned about ajax from previous 
+                            homeworks i connected my front end to the database by using an ajax call on the JSP pages
+
+                        </p>
+                        
+                        <p>
+                           This was an interesting assignment because it allowed the HTML to be affected by the data from my SQL tables.
+                             What I found somewhat difficult was getting my SQL statements to join the tables that I wanted. And then making 
+                             sure that they were formatted correctly on my website. This was done in the individual javascript components for each page.
+                             The easy part was getting the database connection set up. The instructions offered on Sally’s website were very comprehensive. 
+                        </p>
+                        <p>
+                        To see the PDF of potential database errors click <a href="docs/dbErrors.pdf">here</a>. Click <a href="webAPIs/listUsersAPI.jsp">here</a> for the Web API that lists the users from my DB.
+                        Click <a href="webAPIs/listBurgersAPI.jsp">here</a> for the Web API that lists the burgers from my DB
+                        </p>
+
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
 
     </div>
     `;

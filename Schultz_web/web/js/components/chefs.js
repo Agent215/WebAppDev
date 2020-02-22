@@ -4,10 +4,19 @@ function chefs(id) {
     var content = `  
         <style>
            
+                @media screen and (max-width: 390px) 
+                {
+            h1 {
+                text-align: center;
+                padding-top: 120px;
+            }}
+    @media screen and (min-width: 390px) 
+                {
             h1 {
                 text-align: center;
                 padding-top: 70px;
             }
+    }
     
             .clickSort td img { /* applies to any <img> tag in a <td> tag in any element classed "clickSort" */
                 width: 70px;
@@ -39,9 +48,16 @@ function chefs(id) {
     // invoke ajax function to read cars.json and if the call was successful, 
     // run function processJSON, otherwise, put an error message in the DOM element 
     // that has id "listHere".
-    ajax("json/allWebUsers.json", processData, "listHere");
+    ajax("webAPIs/listUsersAPI.jsp", processData, "listHere");
 
-    function processData(list) {
+    function processData(obj) {
+
+
+        // do some checking for database errors 
+        if (obj.dbError.length > 0) {
+            document.getElementById("listHere").innerHTML = obj.dbError;
+            return;
+        }
 
         // print out JS object/array that was converted from JSON data by ajax function
         console.log(list);
@@ -50,6 +66,8 @@ function chefs(id) {
         // we can decide the order we want the fields to appear (first property defined is shown first)
         // we can combine, decide to exclude etc...
         var userList = [];
+        var list = [];
+        list = obj.webUserList;
 
         // modify properties (image and price) of the array of objects so it will look 
         // better on the page.
@@ -61,7 +79,8 @@ function chefs(id) {
             userList[i].userEmail = list[i].userEmail; // show this first
             // Don't show the password
             userList[i].birthday = list[i].birthday;
-            userList[i].likes = list[i].likes;
+            userList[i].membershipFee = list[i].membershipFee;
+           // userList[i].likes = list[i].likes;
             userList[i].role = list[i].userRoleId + " " + list[i].userRoleType;
         }
 

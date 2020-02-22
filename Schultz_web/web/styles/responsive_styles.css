@@ -25,8 +25,72 @@ All of myStyle.css applies to Mobile and Desktop */
     box-shadow: 5px 5px 5px grey;
 }
 
+/* ------------ Mobile Only Styles --------------- */
+@media screen and (max-width: 390px) {
+    .titleNav { /* titleNav is fixed at the top */
+        position:fixed; 
+        top:0px;
+        left:0px;
+        z-index: 1;                    
+        width: 100%;    
+        background-color:#F0D665;
+        padding-bottom: 1.5%; 
+        color: black;
+        font-weight: bold;
+        box-shadow: 0px 0px 5px black;  
+        min-width: 650px; 
+        height: 25%;
+
+    }
+
+    #pageTitle { 
+        padding:12px;
+        padding-bottom: 0px; 
+        font-size:60px;
+        font-style: normal;
+        font-family: Impact, Charcoal, sans-serif;
+        letter-spacing: 2.5px; 
+        float: left;
+    }
+
+    /* for keeping the main icon responsive and placed correctly*/
+    #mainIcon{
+        padding-left:0;
+        padding-top:40%;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0px;
+        width: 100%;  
+    }
+
+
+    #nav { /* nav bar in top right*/
+        float:left;
+        font-size:24px;
+        padding-top:10px;
+    }
+
+    /* don't delete this even though there are no style rules - js needs it, references it. */
+    .dropHeader {
+
+    }
+    /* style for dropdown menu buttons*/
+    .dropdown {
+        position: relative;  
+        display: inline-block;
+        margin-right: 1ex;
+        cursor: pointer;
+        min-width: 70px;
+    }
+    
+    .dropdown img{
+        width: 50px;
+        height: 37px;
+    }
+}
+
 /* ------------ Desktop Only Styles --------------- */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 390px) {
 
     .column {
         float: left;
@@ -57,4 +121,56 @@ All of myStyle.css applies to Mobile and Desktop */
         clear: both;
     }
 
+
+    .titleNav { /* titleNav is fixed at the top */
+        position:fixed; 
+        top:0px;
+        left:0px;
+        z-index: 1;                    
+        width: 100%;    
+        background-color:#F0D665;
+        padding-bottom: 1.5%; 
+        color: black;
+        font-weight: bold;
+        box-shadow: 0px 0px 5px black;  
+        min-width: 650px; 
+
+    }
+    #pageTitle { 
+        padding:12px;
+        padding-bottom: 0px; 
+        font-size:46px;
+        font-style: normal;
+        font-family: Impact, Charcoal, sans-serif;
+        letter-spacing: 2.5px; 
+        float: left;
+    }
+    /* for keeping the main icon responsive and placed correctly*/
+    #mainIcon{
+        padding-left:0;
+        padding-top:7%;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0px;
+        width: 100%;  
+    }
+
+
+    #nav { /* nav bar in top right*/
+        float:right;
+        font-size:24px;
+        padding-top:30px;
+    }
+
+    /* don't delete this even though there are no style rules - js needs it, references it. */
+    .dropHeader {
+
+    }
+    /* style for dropdown menu buttons*/
+    .dropdown {
+        position: relative;  
+        display: inline-block;
+        margin-right: 1ex;
+        cursor: pointer;
+    }
 } 

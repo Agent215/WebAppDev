@@ -1,3 +1,11 @@
+/*Abraham Schultz
+ * 2/20/2020
+ * 
+ * general purpose code to create a slick sortable table
+ * that also can be filtered by an input field.
+ * much of this code was given to me by the proffesor as seperate files.
+ * I just made it work together.
+ */
 function MakeTable(list, id, sortOrderPropName) {
 
 
@@ -189,8 +197,6 @@ function MakeTable(list, id, sortOrderPropName) {
 //************************************************************************************
 
 
-
-
     // create one column header per property with column header content
     // matching the property name
     var obj = list[0];
@@ -220,7 +226,5 @@ function MakeTable(list, id, sortOrderPropName) {
         console.log("search filter changed to " + searchInput.value);
         addDataRows(searchInput.value);
     };
-
-
 
 }  // MakeTable

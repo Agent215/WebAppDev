@@ -31,7 +31,7 @@
         "userEmail": "Abraham.Schultz@gmail.com",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190409-pizza-burger-horizontal-2-1555624827.png?crop=1.00xw:0.752xh;0,0.0986xh&resize=1200:*",
         "burgerName": "Pizza Burger",
-        "description": "Beef patty, mozzerella cheese, tomato sauce, pepperoni, garlix aoli",
+        "description": "Beef patty, mozzerella cheese, tomato sauce, pepperoni, garlic aoli",
         "userRoleType": "Admin",
         "likes": "420"
     },
@@ -61,5 +61,14 @@
         "description": "Fresh, never frozen beef, Applewood smoked bacon, American cheese, crisp lettuce, tomato, and mayo.",
         "userRoleType": "Member",
         "likes": "99"
+    },
+    {
+        "webUserId": "345",
+        "userEmail": "brad@ba.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLG2E5hK4PRtx-3T5Iq0PtfKydfkDk2bkI81_yHhTLeViwGwVO",
+        "burgerName": "Black and Blue Burger",
+        "description": "All beef patty, blue cheese crumbles, crispy bacon, fried onions",
+        "userRoleType": "Member",
+        "likes": "1000000"
     }
 ]
