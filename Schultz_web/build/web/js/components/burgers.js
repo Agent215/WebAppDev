@@ -54,7 +54,12 @@ burgers.display = function (id) {
     // invoke ajax function to read cars.json and if the call was successful, 
     // run function processJSON, otherwise, put an error message in the DOM element 
     // that has id "listHere".
-    ajax("webAPIs/listBurgersAPI.jsp", processData, "listHere");
+   // ajax("webAPIs/listBurgersAPI.jsp", processData, "listHere");
+    ajax2({
+        url: "webAPIs/listBurgersAPI.jsp",
+        successFn: processData,
+        errorId: "listHere"
+    });
 
     function processData(obj) {
 

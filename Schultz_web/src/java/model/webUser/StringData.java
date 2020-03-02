@@ -61,6 +61,7 @@ public class StringData {
                 + ", Birthday: " + this.birthday
                 + ", Membership Fee: " + this.membershipFee
                 + ", User Role Id: " + this.userRoleId
-                + ", User Role Type: " + this.userRoleType;
+                + ", User Role Type: " + this.userRoleType
+                + ", Stars: " + this.stars;
     }
 }
