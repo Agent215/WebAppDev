@@ -72,9 +72,9 @@ public final class logonAPI_jsp extends org.apache.jasper.runtime.HttpJspBase
     String pass = request.getParameter("pass");
     // check if null
     if (email == null) {
-        list.dbError = "Cannot search for user - 'URLemail' most be supplied";
+        data.errorMsg = "Cannot search for user - 'URLemail' most be supplied";
     } else if (pass == null) {
-        list.dbError = "Cannot search for user - 'URLpass' most be supplied";
+        data.errorMsg = "Cannot search for user - 'URLpass' most be supplied";
     } else {
 
         DbConn dbc = new DbConn();
@@ -86,8 +86,8 @@ public final class logonAPI_jsp extends org.apache.jasper.runtime.HttpJspBase
             list = DbMods.LogonFind(email, pass, dbc);
             userList = list.webUserList;
             if (list.webUserList.isEmpty()) {
-                list.dbError += "wrong credentials entered try again";
-                //list.add(data);
+                data.errorMsg += "wrong credentials entered try again";
+                list.add(data);
             }
 
         }

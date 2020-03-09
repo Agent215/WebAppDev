@@ -18,6 +18,7 @@ as well as list of ingredients. The database will be able to be queried by any o
         <!-- using responsive design code provided in class -->
         <link href ="styles/responsive_styles.css" rel ="stylesheet" type="text/css"/>
         <link href ="styles/clickSort.css" rel="stylesheet" type="text/css"/>
+        <link href ="styles/logon.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <!-- nav bar-->
@@ -35,7 +36,7 @@ as well as list of ingredients. The database will be able to be queried by any o
                     <img class="dropHeader" onclick="dd.toggle(this)" title="Account" src="icons/dark/account_dd_icon_H24.png" alt="Account" >
                     <div class="dropContent" id="accountDropDown">
                         <a href="#/register">Register</a> <br/>
-                        <a href="#/login">Log In</a> <br/>
+                        <a href="#/login">Log&nbsp;In</a> <br/>
                         <a href="#/profile">Profile</a> <br/>
                         <a href="#/logout">Log Out</a>
                     </div> 
@@ -65,6 +66,7 @@ as well as list of ingredients. The database will be able to be queried by any o
 
         <div id="content">
             <!--  content goes here via java script  -->
+
         </div>
 
         <div id="footer">
@@ -82,7 +84,7 @@ as well as list of ingredients. The database will be able to be queried by any o
         <script src="js/components/login.js"></script>
         <script src="js/components/register.js"></script>
         <script src ="js/ajax.js"></script>
-         <script src ="js/ajax2.js"></script>
+        <script src ="js/ajax2.js"></script>
         <script src ="js/MakeTable.js"></script>
         <script>
                         "use strict";
@@ -91,12 +93,12 @@ as well as list of ingredients. The database will be able to be queried by any o
                         myRoutes['#/'] = home.display;  // on page reload, function home will run
                         myRoutes['#/home'] = home.display; // function home
                         myRoutes['#/burgers'] = burgers.display; // function burgers
-                        myRoutes['#/chefs'] = chefs; // function chefs
+                        myRoutes['#/chefs'] = chefs.list; // function chefs
                         myRoutes['#/blog'] = blog; // function blog
-                        myRoutes['#/login'] = login; // function login
+                        myRoutes['#/login'] = login.LoginUI; // function login
                         myRoutes['#/logout'] = logout; // function logout
                         myRoutes['#/register'] = register; // function register
-                        myRoutes['#/profile'] = profile; // function profile
+                        myRoutes['#/profile'] = profile.display; // function profile
 
 
                         // routeFw returns a routing object that has private and public 

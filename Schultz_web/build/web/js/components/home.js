@@ -34,6 +34,8 @@ var home = {};
                             <li>Data tables for Chefs and Burgers</li>
                             <li>Data tables are click sortable</li>
                             <li>Data tables sortable by search field</li>
+                            <li>Logon functionality</li>
+                            <li>SQL database backend </li>
                         </ul>
                     </div>
                 </div>

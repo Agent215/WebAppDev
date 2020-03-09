@@ -182,6 +182,30 @@ var content = `
                 </div>
                 <div class='stopFloat'></div>
             </div>
+    
+     <div class="row">
+                <div class='column column90'>
+                    <div>
+                         <h2>HW 6 Logon</h2>
+                        <p>
+                             In this homework I learned about...
+
+                        </p>
+                        
+                        <p>
+                           This was an interesting becuase ...
+                        </p>
+                        <p>
+                        Click <a href="webAPIs/getProfileAPI.jsp">here</a> for the Web API that lists the user who is currently logged in.
+                        Click <a href="webAPIs/logonAPI.jsp">here</a> for the Web API that logs a user on.
+                        Click <a href="webAPIs/logoffAPI.jsp">here</a> for the Web API that logs a user off.
+                        Click <a href="webAPIs/listUsersAPI.jsp">here</a> for the Web API that lists all the users.
+                        </p>
+
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
 
     </div>
     `;

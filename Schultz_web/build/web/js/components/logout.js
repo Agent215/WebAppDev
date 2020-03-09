@@ -19,11 +19,24 @@ function logout(id) {
     }
      </style>
       <p>
-        <h1>
-            Logout Content COMING SOON !
+        <h1 id="message">
+          Loading...
         </h1>
       
       </p>
     `;
+
+
+    ajax2({
+        url: "webAPIs/logoffAPI.jsp",
+        successFn: logout,
+        errorId: "message"
+    });
+
+    function logout(obj) {
+
+        document.getElementById("message").innerHTML = "you have successfully logged out";
+    }
+
     document.getElementById(id).innerHTML = content;
 }

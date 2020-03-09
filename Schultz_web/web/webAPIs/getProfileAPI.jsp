@@ -12,6 +12,10 @@
     StringDataList list = new StringDataList();
     // the array of strings containing user meta data
     ArrayList<StringData> userList = new ArrayList();
+    // null constructor so we have data sections visable even if they are empty
+    StringData data = new StringData();
+    // add empty meta data sections to list
+    list.add(data);
     //check if session is null
     if (session != null) {
         userList = (ArrayList) session.getAttribute("user");
@@ -20,13 +24,15 @@
     }
     // check if user list is null, if it is no one is logged in
     if (userList == null) {
-        list.dbError += "Cannot get user - There is no user logged in";
+
+        data.errorMsg += "Cannot get user - There is no user logged in";
+
     } else {
-        // do nothing
+        // if we have a user logged in then set the list with correct user meta data
+        list.webUserList = userList;
     }
 
     //  we now can add the userlist to the blank StringDataList to recreate the entire java Object
-    list.webUserList = userList;
     // This object (from the GSON library) can to convert between JSON <-> POJO (plain old java object) 
     Gson gson = new Gson();
 
