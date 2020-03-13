@@ -60,7 +60,7 @@ profile.display = function (id) {
         } else
         // do some checking for other errors 
         if (obj.webUserList[0].errorMsg.length > 0) {
-            document.getElementById("profileHere").innerHTML = obj.webUserList[0].errorMsg;
+            document.getElementById("profileHere").innerHTML = "you are not logged in";
             return;
         } else {
             //debugging

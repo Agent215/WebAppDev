@@ -27,6 +27,8 @@ function logout(id) {
     `;
 
 
+
+
     ajax2({
         url: "webAPIs/logoffAPI.jsp",
         successFn: logout,
@@ -35,7 +37,12 @@ function logout(id) {
 
     function logout(obj) {
 
-        document.getElementById("message").innerHTML = "you have successfully logged out";
+
+
+        document.getElementById("message").innerHTML = "you are logged out";
+
+
+
     }
 
     document.getElementById(id).innerHTML = content;

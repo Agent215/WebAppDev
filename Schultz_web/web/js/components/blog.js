@@ -188,12 +188,18 @@ var content = `
                     <div>
                          <h2>HW 6 Logon</h2>
                         <p>
-                             In this homework I learned about...
-
+                            In this homework I learned about how to build the logon functionality.
+                            This involved building a web API that ran from a jsp file. 
+                            Thie API would allow an SQL statement to be called with two parameterized input fields used.
+                            These fields are the user email and password. I learned how to safely create SQL statements that incorporated the user input. 
+                            I also learned how to set session attributes so that i could store data persistently server side.
+                            This was used to pass the logged in user info between pages.
+                            Some things that were difficult were getting the correct error messages to display. 
+                            The easier part for was getting the SQL statements to work as we did these already in the labs.
                         </p>
                         
                         <p>
-                           This was an interesting becuase ...
+                            This was an interesting assignment because it allowed me to build a feature that is common in many modern websites.
                         </p>
                         <p>
                         Click <a href="webAPIs/getProfileAPI.jsp">here</a> for the Web API that lists the user who is currently logged in.

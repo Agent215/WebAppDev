@@ -9,7 +9,7 @@ login.LoginUI = function (targetId) {
                 <br/>
                 Email Address <input type="text" id="emailIn"/>
                 <br/>
-                Password <input type="text" id="passwordIn"/>
+                Password <input type="password" id="passwordIn"/>
                 <br/>
                 <input type="button" value="Submit" onclick="login.logIn('emailIn', 'passwordIn', 'msgArea')"/>
                 <br/> <br/>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href ="FlipStyles.css" rel ="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div id="burger1">burger 1 </div>
+        <div id="burger2">burger 2 </div>
+        <div id="burger3">burger 3</div>
+        <script src ="ajax2.js"></script>
+        <script src ="makeTypeFlipCard.js"></script>
+        <script>
+
+            ajax2({
+                url: "listBurgersAPI.jsp",
+                successFn: processData,
+                errorId: "listHere"
+            });
+
+
+            function processData(obj) {
+
+
+
+
+                // do some checking for database errors 
+                if (obj.dbError.length > 0) {
+                    document.getElementById("listHere").innerHTML = obj.dbError;
+                    return;
+                }
+                console.log(obj);  // burger list as an array of objects
+
+                // build new list as we want the fields to appear in the HTML table
+                // we can decide the order we want the fields to appear (first property defined is shown first)
+                // we can combine, decide to exclude etc...
+                var burgerList = [];
+                var list = [];
+                list = obj.burgerList;
+                // modify properties (image and price) of the array of objects so it will look 
+                // better on the page.
+                for (var i = 0; i < list.length; i++) {
+                    burgerList[i] = {};
+
+                    // combine the name of the burger its rating
+                    burgerList[i].burgerName = list[i].burgerName;
+                    burgerList[i].image = list[i].image;
+                    burgerList[i].burgerDescription = list[i].burgerDescription;
+                    //combine the user email and type in to one column
+                    burgerList[i].userEmail = list[i].userEmail;
+                    burgerList[i].stars = list[i].stars;
+
+                }
+
+                // Making a DOM object, nothing shows yet... 
+                makeTypeFlipCard({
+                    obj: burgerList[0],
+                    id: "burger1"});
+
+                makeTypeFlipCard({
+                    obj: burgerList[1],
+                    id: "burger2"});
+
+                makeTypeFlipCard({
+                    obj: burgerList[2],
+                    id: "burger3"});
+
+            } // end success function
+
+        </script>
+    </body>
+
+</html>
