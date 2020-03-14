@@ -14,18 +14,31 @@ and open the template in the editor.
     </head>
 
     <body>
-        <div class="burgers" id="burger1">burger 1
-            <button type="button" onclick="burger1.setSpeed(300)">Click Me!</button>
+        <div class="burgers" id="burger1">
+            <button type="button" onclick="card1.setSpeed(300)">slow text</button>
+            <button type="button" onclick="card1.setSpeed(20)">fast text</button>
         </div>
-        <div class="burgers" id="burger2">burger 2 </div>
-        <div class="burgers"  id="burger3">burger 3</div>
+        <div class="burgers" id="burger2">
+            <button type="button" onclick="card2.setSpeed(300)">slow text</button>
+            <button type="button" onclick="card2.setSpeed(20)">fast text</button>
+        </div>
+        <div class="burgers"  id="burger3">
+            <button type="button" onclick="card3.setSpeed(300)">slow text</button>
+            <button type="button" onclick="card3.setSpeed(20)">fast text</button>
+        </div>
 
-        <script src ="ajax2.js"></script>
+        <script src ="../../js/ajax2.js"></script>
         <script src ="makeTypeFlipCard.js"></script>
         <script>
+                "use strict";
+
+                //global variables to hold burger list data to call make flip cards from
+                var card1 = [];
+                var card2 = [];
+                var card3 = [];
 
                 ajax2({
-                    url: "listBurgersAPI.jsp",
+                    url: "../../webAPIs/listBurgersAPI.jsp",
                     successFn: processData,
                     errorId: "listHere"
                 });
@@ -44,6 +57,7 @@ and open the template in the editor.
                     // we can combine, decide to exclude etc...
                     var burgerList = [];
                     var list = [];
+
                     list = obj.burgerList;
                     // modify properties (image and price) of the array of objects so it will look 
                     // better on the page.
@@ -59,21 +73,21 @@ and open the template in the editor.
                         burgerList[i].stars = list[i].stars;
                     }
 
-                    var card1 = makeTypeFlipCard({
+
+                    card1 = makeTypeFlipCard({
                         obj: burgerList[0],
                         id: "burger1"}
                     );
 
-                    var card2 = makeTypeFlipCard({
+                    card2 = makeTypeFlipCard({
                         obj: burgerList[1],
                         id: "burger2",
                         size: "large"});
 
-                    var card3 = makeTypeFlipCard({
+                    card3 = makeTypeFlipCard({
                         obj: burgerList[2],
                         id: "burger3",
                         size: "xlarge"});
-
                     return burgerList;
 
                 } // end success function
