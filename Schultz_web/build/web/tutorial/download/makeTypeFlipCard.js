@@ -3,9 +3,7 @@
 // CIS 3308 
 
 //TODO : fix so that we can refrence outside ajax and jsp scripts without including in folder
-//TODO : fix focus out so that card flips around
-//TODO : add public method to change size by reassinging classes
-//TODO : fix typewriter function
+//TODO : add public method
 
 // parameter object expected to have these properties:
 // a object containg json data pulled from a database or elsewhere
@@ -13,12 +11,16 @@
 // size of card , x-small, small , medium, large, x-large
 function makeTypeFlipCard(params) {
 
+    var o = {};
     //declare vars that can change;
-    var flipDataSize = 5;
     var imageSize;
     var cardStyle;
+    var i = 0;
+    var j = 0;
+    var n = 0;
+    var speed = 50;
 
-//check to make sure params contains a json object with data to display
+    //check to make sure params contains a json object with data to display
     if (!params.obj) {
         alert("parameter object must have an 'obj' property");
         return;
@@ -26,6 +28,8 @@ function makeTypeFlipCard(params) {
 
     // add burger data from json object
     var burgerObj = params.obj;
+    // get rating of burger , our of 5 stars
+    var numberOfStars = burgerObj.stars;
 
     // check to make sure that we have an id for the DOM element this new flipcard will be created in
     if (!params.id) {
@@ -33,6 +37,7 @@ function makeTypeFlipCard(params) {
         return;
     }
 
+    // set container id 
     var flipCardDiv = document.getElementById(params.id);
     var flipCard = document.createElement("div");
 
@@ -41,23 +46,44 @@ function makeTypeFlipCard(params) {
 
         console.log("focusing");
         flipCard.classList.add("onFocus");
-        // typeWriter();
+        typeWriter();
     }
     );
 
-    // Event handler to reset text if we focus elsewhere
-    flipCard.addEventListener('focusout', function () {
-        console.log("Unfocusing");
-        flipCard.classList.remove("onFocus");
-        //  resetText();
-    }
-    );
+    // even handlers to listen for clickoutside of element
+    document.addEventListener('click', function (event) {
+        var isClickInside = flipCardDiv.contains(event.target);
+
+        if (!isClickInside) {
+            //the click was outside the specifiedElement, do something
+            console.log("clicked outside");
+            flipCard.classList.remove("onFocus");
+            resetText();
+        } else {
+            console.log("clicked inside");
+        }
+    });
 
     flipCardDiv.appendChild(flipCard);
 
-    // if no size is provided then set default css size
+    // if no size is provided then set default css size and style
+    // other wise set to assinged css styles
     if (!params.size) {
         flipCard.classList.add("flip-card-med");
+        imageSize = "med";
+        cardStyle = "flip-card-med";
+    } else
+    if (params.size === "large") {
+        flipCard.classList.add("flip-card-large");
+        cardStyle = "flip-card-large";
+        imageSize = "large";
+
+    } else
+    if (params.size === "xlarge") {
+        flipCard.classList.add("flip-card-xlarge");
+        cardStyle = "flip-card-xlarge";
+        imageSize = "xlarge";
+
     }
 
     // add inner div which contains the front and back
@@ -83,6 +109,7 @@ function makeTypeFlipCard(params) {
     // create front of card div to hold image
     var front = document.createElement("div");
     front.classList.add("flip-card-front");
+    front.classList.add(imageSize);
     flipCardInner.appendChild(front);
     // create back of card div to hold data
     var flipCardBack = document.createElement("div");
@@ -91,9 +118,8 @@ function makeTypeFlipCard(params) {
 
     //create image
     var img = document.createElement("img");
-
-
     img.src = burgerObj.image;
+    img.classList.add(imageSize);
 
     // add name description email and rating
     var name = document.createElement("h1");
@@ -109,38 +135,44 @@ function makeTypeFlipCard(params) {
     flipCardBack.appendChild(rating);
     rating.innerHTML = "Rating";
 
-    var numberOfStars = burgerObj.stars;
+    // add the filled in stars
+    for (var k = 0; k < numberOfStars; k++) {
 
-    //TODO add stars here
+        var star = document.createElement("span");
+        star.classList.add("fa");
+        star.classList.add("fa-star");
+        star.classList.add("checked");
+        flipCardBack.appendChild(star);
+    }
 
+    // if it is not a 5 star burger add empty stars after
+    if ((5 - numberOfStars) > 0) {
+        var emptyStars = 5 - numberOfStars;
+        for (var i = 0; i < emptyStars; i++) {
+            var star = document.createElement("span");
+            star.classList.add("fa");
+            star.classList.add("fa-star");
+            flipCardBack.appendChild(star);
+        }
+    }
 
-    name.innerHTML = burgerObj.burgerName;
-    desc.innerHTML = burgerObj.burgerDescription;
-    email.innerHTML = burgerObj.userEmail;
-
-
-    var i = 0;
-    var j = 0;
-    var n = 0;
-    var speed = 50;
     // type writer function types data
-    //TODO fix 
     function typeWriter() {
 
         console.log("typeWriter function active");
-        if (i < name.innerHTML.length) {
-            this.parentElement.getElementsByTagName("h1")[0].innerHTML += name.innerHTML.charAt(i);
+        if (i < burgerObj.burgerName.length) {
+            name.innerHTML += burgerObj.burgerName.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
         } else
-        if (j < desc.innerHTML.length) {
+        if (j < burgerObj.burgerDescription.length) {
 
-            this.parentElement.getElementsByTagName("p")[0].innerHTML += desc.innerHTML.charAt(i);
+            desc.innerHTML += burgerObj.burgerDescription.charAt(j);
             j++;
             setTimeout(typeWriter, speed);
         } else
-        if (n < email.innerHTML.length) {
-            this.parentElement.getElementsByTagName("p")[2].innerHTML += email.innerHTML.charAt(i);
+        if (n < burgerObj.userEmail.length) {
+            email.innerHTML += burgerObj.userEmail.charAt(n);
             n++;
             setTimeout(typeWriter, speed);
         }
@@ -148,10 +180,30 @@ function makeTypeFlipCard(params) {
     } // end typewriter
 
 
-    var div = document.createElement("div");
-    div.classList.add("stopFloat");
-    flipCard.appendChild(div);
+    // reset the typewriter text here
+    function resetText() {
+
+        console.log("reseting text");
+        name.innerHTML = "";
+        desc.innerHTML = "";
+        email.innerHTML = "";
+        i = 0;
+        j = 0;
+        n = 0;
+    }
+
+    // public methods
+    //set speed of typewriter text
+    o.setSpeed = function (speedin) {
+
+        speed = speedin;
+    };
 
 
+//    var div = document.createElement("div");
+//    div.classList.add("stopFloat");
+//    flipCard.appendChild(div);
+
+    return o;
 
 }

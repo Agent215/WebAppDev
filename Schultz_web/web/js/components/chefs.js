@@ -85,7 +85,7 @@ var chefs = {};
                         userList[i].role = list[i].userRoleId + " " + list[i].userRoleType;
                 }
 
-                console.log("USER LIST");
+                         console.log("USER LIST");
                         console.log(userList);
                         // Making a DOM object, nothing shows yet... 
                         MakeTable(userList, "listHere", "membershipFee");

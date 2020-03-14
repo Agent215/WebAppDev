@@ -11,6 +11,29 @@
 }
 
 
+.flip-card-xlarge {
+    margin: auto;
+    background-color: transparent;
+    width: 500px;
+    height: 500px;
+    border: 0px ;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    display: block;
+    z-index: 100;
+}
+
+.flip-card-large {
+    margin: auto;
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    border: 0px ;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    display: block;
+    z-index: 100;
+}
+
+
 .flip-card-med {
     margin: auto;
     background-color: transparent;
@@ -21,10 +44,21 @@
     display: block;
 }
 
-img{
+.med{
 
     height: 300px;
     width: 300px;
+}
+
+.large{
+
+    height: 400px;
+    width: 400px;
+}
+.xlarge{
+
+    height: 500px;
+    width: 500px;
 }
 /* text style for tutorial instruction text */
 .instructions{
@@ -44,9 +78,9 @@ img{
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card-med:focus .flip-card-inner {
+/*.flip-card-med:focus .flip-card-inner {
     transform: rotateY(180deg);
-}
+}*/
 
 .onFocus .flip-card-inner{
     transform: rotateY(180deg);
@@ -54,6 +88,19 @@ img{
 }
 
 
+/* for keeping burgers left*/
+.burgers{
+    
+    margin: 10px;
+    float:left;
+}
+
+
+
+/* for rating stars*/
+.checked {
+    color: orange;
+}
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
@@ -68,11 +115,9 @@ img{
 .flip-card-front {
     background-color: #CAEAA7;
     color: black;
-    width: 300px;
-    height: 300px;
-
+    /*    width: 300px;
+        height: 300px;*/
     box-shadow: 5px 5px 5px grey;
-
 }
 
 /* for rating stars*/
