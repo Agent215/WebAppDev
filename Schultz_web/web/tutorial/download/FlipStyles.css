@@ -16,8 +16,8 @@ We have added the border property to demonstrate that the flip itself goes out o
 .flip-card-xlarge {
     margin: auto;
     background-color: transparent;
-    width: 500px;
-    height: 500px;
+    height: 330px;
+    width: 579px;
     border: 0px ;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     display: block;
@@ -27,8 +27,8 @@ We have added the border property to demonstrate that the flip itself goes out o
 .flip-card-large {
     margin: auto;
     background-color: transparent;
-    width: 400px;
-    height: 400px;
+    height: 274px;
+    width: 305px;
     border: 0px ;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     display: block;
@@ -38,8 +38,8 @@ We have added the border property to demonstrate that the flip itself goes out o
 .flip-card-med {
     margin: auto;
     background-color: transparent;
-    width: 300px;
-    height: 300px;
+    width: 414px;
+    height: 274.5px;
     border: 0px ;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     display: block;
@@ -47,19 +47,19 @@ We have added the border property to demonstrate that the flip itself goes out o
 
 .med{
 
-    height: 300px;
-    width: 300px;
+    width: 414px;
+    height: 274.5px;
 }
 
 .large{
 
-    height: 400px;
-    width: 400px;
+    height: 274px;
+    width: 305px;
 }
 .xlarge{
 
-    height: 500px;
-    width: 500px;
+    height: 330px;
+    width: 579px;
 }
 
 /* This container is needed to position the front and back side */
