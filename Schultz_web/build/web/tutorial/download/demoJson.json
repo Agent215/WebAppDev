@@ -1,0 +1,42 @@
+
+[
+   
+  {
+        "burgerName": "Bacon Cheese Burger",
+        "webUserId": "1",
+        "image": "https://www.seriouseats.com/recipes/images/2013/07/20130723-bacon-weave-food-lab-burger-step-by-step-27.jpg",
+        "burgerDescription": "beef cheese and bacon with a bun",
+        "userEmail": "abraham.schultz@gmail.com",
+        "userPassword": "",
+        "userRoleId": "1",
+        "userRoleType": "ADMIN",
+        "stars": "3",
+        "errorMsg": ""
+    },
+    {
+        "burgerName": "Betty Burger",
+        "webUserId": "2",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVMkdIVlThQ0xDJgJGstAKarUAFRxX8XDUpEyR-PEiXVFZJheR",
+        "burgerDescription": "Angus sirloin burger, confit pork belly, avocado, cheddar, lettuce, tomato, roasted garlic aioli & runny sunny side up egg",
+        "userEmail": "fake@gmail.com",
+        "userPassword": "",
+        "userRoleId": "2",
+        "userRoleType": "MEMBER",
+        "stars": "2",
+        "errorMsg": ""
+    },
+    {
+        "burgerName": "Big Mac",
+        "webUserId": "3",
+        "image": "https://i1.wp.com/nerdgettingfit.com/wp-content/uploads/2019/10/t-mcdonalds-Big-Mac.jpg?resize=772%2C440&ssl=1",
+        "burgerDescription": "The Big Mac consists of two 1.6 oz (45.4 g) beef patties, special sauce , iceberg lettuce, American cheese, pickles, and onions, served in a three-part sesame seed bun",
+        "userEmail": "brad@ba.com",
+        "userPassword": "",
+        "userRoleId": "2",
+        "userRoleType": "MEMBER",
+        "stars": "2",
+        "errorMsg": ""
+    }
+
+
+]

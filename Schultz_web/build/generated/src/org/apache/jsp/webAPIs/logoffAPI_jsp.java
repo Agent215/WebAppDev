@@ -57,9 +57,9 @@ public final class logoffAPI_jsp extends org.apache.jasper.runtime.HttpJspBase
     //reset any session variables 
     // this is used to log the user off.
     session.invalidate();
-
+    Gson gson = new Gson();
     System.out.println("session attributes invalidated - logging all users off");
-    out.print("session attributes invalidated - logging all users off");
+    out.print(gson.toJson("session attributes invalidated - logging all users off").trim());
 
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

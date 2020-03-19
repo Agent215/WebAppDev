@@ -24,19 +24,14 @@
     }
     // check if user list is null, if it is no one is logged in
     if (userList == null) {
-
         data.errorMsg += "Cannot get user - There is no user logged in";
-
     } else {
         // if we have a user logged in then set the list with correct user meta data
         list.webUserList = userList;
     }
-
-
     //  we now can add the userlist to the blank StringDataList to recreate the entire java Object
     // This object (from the GSON library) can to convert between JSON <-> POJO (plain old java object) 
     Gson gson = new Gson();
-
     out.print(gson.toJson(list).trim());
 
 %>

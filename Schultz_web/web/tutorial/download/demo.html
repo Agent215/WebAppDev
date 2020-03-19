@@ -17,14 +17,23 @@ and open the template in the editor.
         <div class="burgers" id="burger1">
             <button type="button" onclick="card1.setSpeed(300)">slow text</button>
             <button type="button" onclick="card1.setSpeed(20)">fast text</button>
+            <button type="button" onclick="card1.setBackColor('red')">Red</button>
+            <button type="button" onclick="card1.setBackColor('green')">Green</button>
+            <button type="button" onclick="card1.setBackColor('black')">Black</button>
         </div>
         <div class="burgers" id="burger2">
             <button type="button" onclick="card2.setSpeed(300)">slow text</button>
             <button type="button" onclick="card2.setSpeed(20)">fast text</button>
+            <button type="button" onclick="card2.setBackColor('red')">Red</button>
+            <button type="button" onclick="card2.setBackColor('green')">Green</button>
+            <button type="button" onclick="card2.setBackColor('black')">Black</button>
         </div>
         <div class="burgers"  id="burger3">
             <button type="button" onclick="card3.setSpeed(300)">slow text</button>
             <button type="button" onclick="card3.setSpeed(20)">fast text</button>
+            <button type="button" onclick="card3.setBackColor('red')">Red</button>
+            <button type="button" onclick="card3.setBackColor('green')">Green</button>
+            <button type="button" onclick="card3.setBackColor('black')">Black</button>
         </div>
 
         <script src ="../../js/ajax2.js"></script>
@@ -38,7 +47,8 @@ and open the template in the editor.
                 var card3 = [];
 
                 ajax2({
-                    url: "../../webAPIs/listBurgersAPI.jsp",
+                    // you can pass a .jsp file or anything else here that returns Json
+                    url: "demoJson.json",
                     successFn: processData,
                     errorId: "listHere"
                 });
@@ -46,10 +56,11 @@ and open the template in the editor.
                 function processData(obj) {
 
                     // do some checking for database errors 
-                    if (obj.dbError.length > 0) {
-                        document.getElementById("listHere").innerHTML = obj.dbError;
-                        return;
-                    }
+                    // uncomment when using with database
+//                    if (obj.dbError.length > 0) {
+//                        document.getElementById("listHere").innerHTML = obj.dbError;
+//                        return;
+//                    }
                     console.log(obj);  // burger list as an array of objects
 
                     // build new list as we want the fields to appear in the HTML table
@@ -58,7 +69,9 @@ and open the template in the editor.
                     var burgerList = [];
                     var list = [];
 
-                    list = obj.burgerList;
+                    // uncomment to use with database
+                    // list = obj.burgerList;
+                    list = obj;
                     // modify properties (image and price) of the array of objects so it will look 
                     // better on the page.
                     for (var i = 0; i < list.length; i++) {
@@ -72,7 +85,6 @@ and open the template in the editor.
                         burgerList[i].userEmail = list[i].userEmail;
                         burgerList[i].stars = list[i].stars;
                     }
-
 
                     card1 = makeTypeFlipCard({
                         obj: burgerList[0],

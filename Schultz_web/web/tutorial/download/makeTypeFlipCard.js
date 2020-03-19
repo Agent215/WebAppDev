@@ -2,23 +2,32 @@
 //Abraham Schultz
 // CIS 3308 
 
-//TODO : fix so that we can refrence outside ajax and jsp scripts without including in folder
-//TODO : add public method
-
 // parameter object expected to have these properties:
 // a object containg json data pulled from a database or elsewhere
 // an id of the DOM element we want this to be created inside of
-// size of card , x-small, small , medium, large, x-large
+// size of card  medium, large, x-large
+
+"use strict";
 function makeTypeFlipCard(params) {
 
+
+
+    // object to return
     var o = {};
     //declare vars that can change;
     var imageSize;
     var cardStyle;
+    // iterators for the typewriter
     var i = 0;
     var j = 0;
     var n = 0;
+    //total number of stars a burge can get
+    const totStars = 5;
+    //default values
+    var backgroundColor = "dodgerblue";
     var speed = 50;
+    var fontSize = "12px";
+    var fontColor = "white";
 
     //check to make sure params contains a json object with data to display
     if (!params.obj) {
@@ -50,12 +59,12 @@ function makeTypeFlipCard(params) {
     }
     );
 
-    // even handlers to listen for clickoutside of element
+    // even handlers to listen for click outside of element
     document.addEventListener('click', function (event) {
         var isClickInside = flipCardDiv.contains(event.target);
 
         if (!isClickInside) {
-            //the click was outside the specifiedElement, do something
+            //the click was outside 
             console.log("clicked outside");
             flipCard.classList.remove("onFocus");
             resetText();
@@ -114,6 +123,7 @@ function makeTypeFlipCard(params) {
     // create back of card div to hold data
     var flipCardBack = document.createElement("div");
     flipCardBack.classList.add("flip-card-back");
+    flipCardBack.style.backgroundColor = backgroundColor;
     flipCardInner.appendChild(flipCardBack);
 
     //create image
@@ -145,10 +155,10 @@ function makeTypeFlipCard(params) {
         flipCardBack.appendChild(star);
     }
 
-    // if it is not a 5 star burger add empty stars after
-    if ((5 - numberOfStars) > 0) {
-        var emptyStars = 5 - numberOfStars;
-        for (var i = 0; i < emptyStars; i++) {
+    // if it is not a 5 star burger then add empty stars after
+    if ((totStars - numberOfStars) > 0) {
+        var emptyStars = totStars - numberOfStars;
+        for (var h = 0; h < emptyStars; h++) {
             var star = document.createElement("span");
             star.classList.add("fa");
             star.classList.add("fa-star");
@@ -192,17 +202,30 @@ function makeTypeFlipCard(params) {
         n = 0;
     }
 
-    // public methods
+    // public functions *******************************************************************************
     //set speed of typewriter text
     o.setSpeed = function (speedin) {
 
         speed = speedin;
     };
 
+    //set color of back of card
+    o.setBackColor = function (colorin) {
 
-//    var div = document.createElement("div");
-//    div.classList.add("stopFloat");
-//    flipCard.appendChild(div);
+        console.log("changing background color to :" + colorin)
+        backgroundColor = colorin;
+        flipCardBack.style.backgroundColor = backgroundColor;
+    };
+
+    //set font size on back of card
+    o.setFontSize = function (sizein) {
+        fontSize = sizein;
+    };
+    
+    //set font color
+    o.setFontColor = function (colorin) {
+        fontColor = colorin;
+    };
 
     return o;
 
