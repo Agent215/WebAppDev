@@ -10,8 +10,6 @@
 "use strict";
 function makeTypeFlipCard(params) {
 
-
-
     // object to return
     var o = {};
     //declare vars that can change;
@@ -35,16 +33,24 @@ function makeTypeFlipCard(params) {
         return;
     }
 
-    // add burger data from json object
-    var burgerObj = params.obj;
-    // get rating of burger , our of 5 stars
-    var numberOfStars = burgerObj.stars;
-
     // check to make sure that we have an id for the DOM element this new flipcard will be created in
     if (!params.id) {
         alert("parameter object must have an 'id' property");
         return;
     }
+
+    // add data from json/javascript object
+    var obj = params.obj;
+  
+    console.log(obj);
+    //paramaterize object list so that this is not dependent on specific object key values
+    // we should probably make this a loop based on object length for better reusbility
+    var firstKey = Object.keys(obj)[0];
+    var secondKey = Object.keys(obj)[1];
+    var thirdKey = Object.keys(obj)[2];
+    var fourthKey = Object.keys(obj)[3];
+    var fifthKey = Object.keys(obj)[4];
+
 
     // set container id 
     var flipCardDiv = document.getElementById(params.id);
@@ -100,17 +106,9 @@ function makeTypeFlipCard(params) {
     flipCard.appendChild(flipCardInner);
     flipCardInner.classList.add("flip-card-inner");
 
-
     //check that DOM element exists
     if (!flipCardDiv) {
         alert("parameter object must have an 'id' property that references a valid DOM element");
-        return;
-    }
-
-    console.log(burgerObj);
-    //make sure we have a burger object with an image
-    if (!burgerObj.image) {
-        alert("parameter object must have an burger Object with an image");
         return;
     }
 
@@ -128,7 +126,7 @@ function makeTypeFlipCard(params) {
 
     //create image
     var img = document.createElement("img");
-    img.src = burgerObj.image;
+    img.src = obj["" + secondKey];
     img.classList.add(imageSize);
 
     // add name description email and rating
@@ -146,7 +144,7 @@ function makeTypeFlipCard(params) {
     rating.innerHTML = "Rating";
 
     // add the filled in stars
-    for (var k = 0; k < numberOfStars; k++) {
+    for (var k = 0; k < obj["" + fifthKey]; k++) {
 
         var star = document.createElement("span");
         star.classList.add("fa");
@@ -156,8 +154,8 @@ function makeTypeFlipCard(params) {
     }
 
     // if it is not a 5 star burger then add empty stars after
-    if ((totStars - numberOfStars) > 0) {
-        var emptyStars = totStars - numberOfStars;
+    if ((totStars - obj["" + fifthKey]) > 0) {
+        var emptyStars = totStars - obj["" + fifthKey];
         for (var h = 0; h < emptyStars; h++) {
             var star = document.createElement("span");
             star.classList.add("fa");
@@ -170,19 +168,19 @@ function makeTypeFlipCard(params) {
     function typeWriter() {
 
         console.log("typeWriter function active");
-        if (i < burgerObj.burgerName.length) {
-            name.innerHTML += burgerObj.burgerName.charAt(i);
+        if (i < obj["" + firstKey].length) {
+            name.innerHTML += obj["" + firstKey].charAt(i);
             i++;
             setTimeout(typeWriter, speed);
         } else
-        if (j < burgerObj.burgerDescription.length) {
+        if (j < obj["" + thirdKey].length) {
 
-            desc.innerHTML += burgerObj.burgerDescription.charAt(j);
+            desc.innerHTML += obj["" + thirdKey].charAt(j);
             j++;
             setTimeout(typeWriter, speed);
         } else
-        if (n < burgerObj.userEmail.length) {
-            email.innerHTML += burgerObj.userEmail.charAt(n);
+        if (n < obj["" + fourthKey].length) {
+            email.innerHTML += obj["" + fourthKey].charAt(n);
             n++;
             setTimeout(typeWriter, speed);
         }
@@ -192,7 +190,6 @@ function makeTypeFlipCard(params) {
 
     // reset the typewriter text here
     function resetText() {
-
         console.log("reseting text");
         name.innerHTML = "";
         desc.innerHTML = "";
@@ -221,7 +218,7 @@ function makeTypeFlipCard(params) {
     o.setFontSize = function (sizein) {
         fontSize = sizein;
     };
-    
+
     //set font color
     o.setFontColor = function (colorin) {
         fontColor = colorin;

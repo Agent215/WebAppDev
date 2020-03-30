@@ -45,13 +45,13 @@ public final class listUsersAPI_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write(" \n");
-      out.write("\n");
-      out.write("\n");
-      out.write(" \n");
-      out.write(" \n");
-      out.write("\n");
-      out.write("\n");
+      out.write(" \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write(" \r\n");
+      out.write(" \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
 
     // default constructor creates nice empty StringDataList with all fields "" (empty string, nothing null).
     StringDataList list = new StringDataList();

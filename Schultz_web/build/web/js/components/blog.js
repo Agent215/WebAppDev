@@ -213,6 +213,46 @@ var content = `
                 <div class='stopFloat'></div>
             </div>
 
+            <div class="row">
+                <div class='column column90'>
+                    <div>
+                       <h2>HW 7 Tutorial</h2>
+                        <p>
+                           
+							This Homework was the second part of a two part assignment. My goal was to implement a reusable 
+							javascript component that i proposed from HW 4. My proposal was a flipcard that has
+                                                        animated text and a start rating icon. I believe I was successful in this respect.
+							I learned a lot from this assignment. I will start by addressing the parts I found easiest. 
+							I thought getting the javascript to create an empty flip card to be the easiest part.
+							when i didn't have to put any text or anything on it. 
+
+							
+							<br>
+							More difficult for me was getting the event handler to correctly spin the card over on click. 
+							then to spin over again when the user was not focusing on it. Also adapting the text typing animation
+							was not as trivial as i thought it would be. This required some parameterization of the object values being passed. 
+							I was careful to try and make the component as general as possible. Although i could not allow the user of this component 
+							to provide unlimited arguments as the card has limited space. The solution to this was to allow the user to create med, 
+							large or xlarge size cards. Also the last argument must be an integer value so we can populate the number of stars to display.
+							The way i addresed many of my problems was by assignment of class styles to objects at run time. 
+							Also document DOM elements were made Anonymous by assignment to variables. So no hardcoded Id values were used.
+
+                        </p>
+                        
+                        <p>
+							This was a very cool assignment. It really helped me understand how javascript components work. I have been working with react
+							some recently and i really feel like this gave me a better understanding of what is going on under the hood.
+                        </p>
+                        <p>
+                        Click <a href="tutorial/index.html">here</a> for a tutorial on how to use my component
+                        
+                        </p>
+
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
+
     </div>
     `;
         // get rid of burger image when we change to blog

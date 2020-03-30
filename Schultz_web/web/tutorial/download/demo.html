@@ -56,7 +56,7 @@ and open the template in the editor.
                 function processData(obj) {
 
                     // do some checking for database errors 
-                    // uncomment when using with database
+                    // uncomment code below when using with database
 //                    if (obj.dbError.length > 0) {
 //                        document.getElementById("listHere").innerHTML = obj.dbError;
 //                        return;
@@ -69,7 +69,7 @@ and open the template in the editor.
                     var burgerList = [];
                     var list = [];
 
-                    // uncomment to use with database
+                    // uncomment code below to use with database
                     // list = obj.burgerList;
                     list = obj;
                     // modify properties (image and price) of the array of objects so it will look 
@@ -77,15 +77,17 @@ and open the template in the editor.
                     for (var i = 0; i < list.length; i++) {
                         burgerList[i] = {};
 
-                        // combine the name of the burger its rating
+                        // add burger data to list
                         burgerList[i].burgerName = list[i].burgerName;
                         burgerList[i].image = list[i].image;
                         burgerList[i].burgerDescription = list[i].burgerDescription;
-                        //combine the user email and type in to one column
                         burgerList[i].userEmail = list[i].userEmail;
                         burgerList[i].stars = list[i].stars;
                     }
 
+                    // create flip card objects
+                    // we can pass it list item representing a burger object
+                    // we can pass it a dom element to display in
                     card1 = makeTypeFlipCard({
                         obj: burgerList[1],
                         id: "burger1"}
@@ -100,8 +102,8 @@ and open the template in the editor.
                         obj: burgerList[2],
                         id: "burger3",
                         size: "xlarge"});
-                    return burgerList;
-
+                    
+                   
                 } // end success function
 
 

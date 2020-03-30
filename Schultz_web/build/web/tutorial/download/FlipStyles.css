@@ -16,8 +16,8 @@ We have added the border property to demonstrate that the flip itself goes out o
 .flip-card-xlarge {
     margin: auto;
     background-color: transparent;
-    height: 330px;
-    width: 579px;
+    height: 600px;
+    width: 600px;
     border: 0px ;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     display: block;
@@ -27,8 +27,8 @@ We have added the border property to demonstrate that the flip itself goes out o
 .flip-card-large {
     margin: auto;
     background-color: transparent;
-    height: 274px;
-    width: 305px;
+    height: 450px;
+    width: 450px;
     border: 0px ;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     display: block;
@@ -38,8 +38,8 @@ We have added the border property to demonstrate that the flip itself goes out o
 .flip-card-med {
     margin: auto;
     background-color: transparent;
-    width: 414px;
-    height: 274.5px;
+    width: 300px;
+    height: 300px;
     border: 0px ;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     display: block;
@@ -47,19 +47,19 @@ We have added the border property to demonstrate that the flip itself goes out o
 
 .med{
 
-    width: 414px;
-    height: 274.5px;
+    width: 300px;
+    height: 300px;
 }
 
 .large{
 
-    height: 274px;
-    width: 305px;
+    height: 450px;
+    width: 450px;
 }
 .xlarge{
 
-    height: 330px;
-    width: 579px;
+    height: 600px;
+    width: 600px;
 }
 
 /* This container is needed to position the front and back side */
@@ -103,11 +103,6 @@ We have added the border property to demonstrate that the flip itself goes out o
     /*    background-color: #CAEAA7;*/
     color: black;
     box-shadow: 5px 5px 5px grey;
-}
-
-/* for rating stars*/
-.checked {
-    color: orange;
 }
 
 /* Style the back side */
