@@ -81,6 +81,7 @@ as well as list of ingredients. The database will be able to be queried by any o
         <script src="js/components/burgers.js"></script>
         <script src="js/components/home.js"></script>
         <script src="js/components/chefs.js"></script>
+        <script src="js/components/users.js"></script>
         <script src="js/components/profile.js"></script>
         <script src="js/components/logout.js"></script>
         <script src="js/components/login.js"></script>
@@ -88,6 +89,9 @@ as well as list of ingredients. The database will be able to be queried by any o
         <script src ="js/ajax.js"></script>
         <script src ="js/ajax2.js"></script>
         <script src ="js/MakeTable.js"></script>
+        <script src="js/CRUD_icons.js"></script>   
+        <script src="js/Utils.js"></script>
+        <script src="js/MakeTableBuilder.js"></script>
         <script>
                         "use strict";
                         var myRoutes = [];
@@ -95,13 +99,14 @@ as well as list of ingredients. The database will be able to be queried by any o
                         myRoutes['#/'] = home.display;  // on page reload, function home will run
                         myRoutes['#/home'] = home.display; // function home
                         myRoutes['#/burgers'] = burgers.display; // function burgers
-                        myRoutes['#/chefs'] = chefs.list; // function chefs
+                        myRoutes['#/chefs'] = users.list; // function chefs
                         myRoutes['#/blog'] = blog; // function blog
                         myRoutes['#/login'] = login.LoginUI; // function login
                         myRoutes['#/logout'] = logout; // function logout
                         myRoutes['#/register'] = register; // function register
                         myRoutes['#/profile'] = profile.display; // function profile
-
+                        myRoutes['#/userUpdate'] = function () {}; // do nothing -- the code will handle the UI
+                        myRoutes['#/burgerUpdate'] = function () {}; // do nothing -- the code will handle the UI
 
                         // routeFw returns a routing object that has private and public 
                         // data members and methods. 
@@ -120,6 +125,7 @@ as well as list of ingredients. The database will be able to be queried by any o
                             dropContentStyle: "dropContent",
                             hiddenRight: "-500px"
                         });
+                        var tableBuilder = MakeTableBuilder("icons/sortUpDown16.png");
         </script>
 
     </body>

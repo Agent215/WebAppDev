@@ -214,16 +214,16 @@ function makeTypeFlipCard(params) {
         flipCardBack.style.backgroundColor = backgroundColor;
     };
 
-    //set font size on back of card
+    //TODO set font size on back of card
     o.setFontSize = function (sizein) {
         fontSize = sizein;
     };
 
-    //set font color
+    //TODO set font color
     o.setFontColor = function (colorin) {
         fontColor = colorin;
     };
 
     return o;
 
-}
+} // end makeTypeFlipCard

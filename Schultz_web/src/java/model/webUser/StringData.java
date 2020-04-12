@@ -13,11 +13,12 @@ import java.sql.ResultSet;
  * There are no getter or setter methods since we are not trying to
  * protect this data in any way.  We want to let the JSP page have
  * free access to put data in or take it out. */
-public class StringData { 
+public class StringData {
 
     public String webUserId = "";
     public String userEmail = "";
     public String userPassword = "";
+    public String userPassword2 = "";
     public String image = "";
     public String birthday = "";
     public String membershipFee = "";

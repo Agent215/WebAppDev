@@ -82,16 +82,16 @@ and open the template in the editor.
                     You can name them what ever you want but know that the order which you place them in the object does matter!
                     <br>
                     <br>
-                    In my example i use an ajax call to grab an on object that contains multiple javascript objects. But you can use a singular 
-                    object or even use an ajax call to a database. As long as it returns data in json it should work.
+                    In my example i use an ajax call to grab a json file and parse it to a javascript array object. But you can use a singular 
+                    object or even use an ajax call to a database. As long as the object follows parameters as described below.
                 </p>
 
                 <ol>
-                    <li>first object we will assume is text and make a header on reverse side of card </li>
-                    <li>second object we assume is an image</li>
-                    <li>third object we assume is text and make a paragraph element on reverse side of card  </li>
-                    <li>fourth object we assume is text and make a paragraph element on reverse side of card  </li>
-                    <li>fifth object we assume is an integer value. This is used to display a star rating of n out of 5 stars where
+                    <li>first parameter we will assume is text and make a header on reverse side of card </li>
+                    <li>second parameter we assume is an image</li>
+                    <li>third parameter we assume is text and make a paragraph element on reverse side of card  </li>
+                    <li>fourth parameter we assume is text and make a paragraph element on reverse side of card  </li>
+                    <li>fifth parameter we assume is an integer value. This is used to display a star rating of n out of 5 stars where
                         n is the integer supplied </li>
                 </ol>
 
@@ -129,8 +129,23 @@ and open the template in the editor.
                     card3 = makeTypeFlipCard({
                         obj: burgerList[2],
                         id: "burger3",
-                        size: "xlarge"});</pre>
+                        size: "xlarge"});
+                </pre>
                 <br>
+                <p>
+                    Below is an example of the type of data the object expects
+                </p>
+                <pre>
+                    {
+                    "burgerName": "Bacon Cheese Burger",
+                    "image": "https://www.seriouseats.com/recipes/images/2013/07/20130723-bacon-weave-food-lab-burger-step-by-step-27.jpg",
+                    "burgerDescription": "beef cheese and bacon with a bun",
+                    "userEmail": "abraham.schultz@gmail.com",
+                    "stars": "3",
+                    }
+                </pre>
+
+
                 <br>
                 In addition to the contructors for this object ther are a two  public methods the HTML coder can call to
                 effect the style and behavior of the flip card.
@@ -141,23 +156,19 @@ and open the template in the editor.
 
                 <br>
                 <br>
+
                 <pre>
            
-            card1.setSpeed(300)         //slow text
-            card1.setSpeed(20)          //fast text
-            card1.setBackColor('green') // green color on back of card
-            card1.setBackColor('ff0000')// red color on back of card
-            card1.setBackColor('black') // black color on back of card
+            &lt; type="button" onclick="card1.setSpeed(300)">slow text&gt;
+            &lt; type="button" onclick="card1.setSpeed(20)">fast text&gt;
+            &lt; type="button" onclick="card1.setBackColor('red')">Red&gt;
+            &lt; type="button" onclick="card1.setBackColor('ff0000')">Red&gt;
+            &lt; type="button" onclick="card1.setBackColor('black')">Black&gt;
    
                 </pre>
 
 
-                <p>
 
-                </p>
-                <p>
-
-                </p>
             </div>
             <div class='stopFloat'></div>
         </div>
