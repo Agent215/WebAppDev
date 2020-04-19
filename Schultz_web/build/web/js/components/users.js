@@ -45,10 +45,15 @@ var users = {};
         <h1>
             Find a Chef!
         </h1>
-      
-        <div id="listHere" class="clickSort"></div>
-      
       </p>
+        <div class="loaderWrapper">
+          <div class="loader">
+            
+          </div>
+          Fetching Chefs...
+
+        </div>
+    
     `;
 
         // Remember: getting a successful ajax call does not mean you got data. 
@@ -66,6 +71,11 @@ var users = {};
 
             if (obj.dbError.length > 0) {
                 contentDOM.innerHTML += "Database Error Encountered: " + obj.dbError;
+                var loader = document.getElementsByClassName("loader");
+                loader[0].style.visibility = "hidden";
+                var loaderWrapper = document.getElementsByClassName("loaderWrapper");
+                loaderWrapper[0].innerHTML = "";
+                loaderWrapper[0].style.visibility = "hidden";
                 return;
             }
 
@@ -109,6 +119,11 @@ var users = {};
                 parent: div
             });
 
+            var loader = document.getElementsByClassName("loader");
+            loader[0].style.visibility = "hidden";
+            var loaderWrapper = document.getElementsByClassName("loaderWrapper");
+            loaderWrapper[0].style.visibility = "hidden";
+            loaderWrapper[0].innerHTML = "";
             // create userList (new array of objects) to have only the desired properties of obj.webUserList. 
             // Add the properties in the order you want them to appear in the HTML table.  
             var userList = [];
@@ -250,6 +265,12 @@ var users = {};
                         <td><input type="text" id="membershipFee" /></td>
                         <td id="membershipFeeError" class="error"></td>
                     </tr>
+        
+                    <tr>
+                        <td>Member Image</td>
+                        <td><input type="text" id="image" /></td>
+                        <td id="imageError" class="error"></td>
+                    </tr>
                     <tr>
                         <td>User Role</td>
                         <td>
@@ -336,6 +357,7 @@ var users = {};
         document.getElementById("userPassword2").value = webUserObj.userPassword;
         document.getElementById("birthday").value = webUserObj.birthday;
         document.getElementById("membershipFee").value = webUserObj.membershipFee;
+        document.getElementById("image").value = webUserObj.image;
         console.log("selected role id is " + webUserObj.userRoleId);
         Utils.makePickList({
             id: "rolePickList", // id of <select> tag in UI
@@ -362,6 +384,7 @@ var users = {};
             "userPassword2": document.getElementById("userPassword2").value,
             "birthday": document.getElementById("birthday").value,
             "membershipFee": document.getElementById("membershipFee").value,
+            "image": document.getElementById("image").value,
 
             "userRoleId": ddList.options[ddList.selectedIndex].value,
             "userRoleType": "",
@@ -389,6 +412,7 @@ var users = {};
         document.getElementById("birthdayError").innerHTML = jsonObj.birthday;
         document.getElementById("membershipFeeError").innerHTML = jsonObj.membershipFee;
         document.getElementById("userRoleIdError").innerHTML = jsonObj.userRoleId;
+        document.getElementById("imageError").innerHTML = jsonObj.userRoleId;
         document.getElementById("recordError").innerHTML = jsonObj.errorMsg;
     }
 

@@ -50,7 +50,7 @@ public class StringData {
     }
 
     public int getCharacterCount() {
-        String s = this.webUserId + this.burgerName + this.burgerDescription;
+        String s = this.webUserId + this.burgerName + this.burgerDescription + this.stars + this.image;
         return s.length();
     }
 

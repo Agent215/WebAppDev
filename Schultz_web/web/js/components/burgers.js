@@ -13,7 +13,7 @@ var burgers = {};
 
 
     burgers.display = function (targetId) {
-        
+
         // for images within the tables
         var imageWidth = "200px";
         // clear out whatever may be currently in the content area
@@ -53,10 +53,16 @@ var burgers = {};
         <h1>
             Find a Burger!
         </h1>
-      
-        <div id="listHere" class="clickSort"></div>
+        
       
       </p>
+         <div class="loaderWrapper">
+          <div class="loader">
+            
+          </div>
+          Fetching Burgers...
+
+        </div>
     `;
 
         // Remember: getting a successful ajax call does not mean you got data. 
@@ -74,6 +80,11 @@ var burgers = {};
 
             if (obj.dbError.length > 0) {
                 contentDOM.innerHTML += "Database Error Encountered: " + obj.dbError;
+                var loader = document.getElementsByClassName("loader");
+                loader[0].style.visibility = "hidden";
+                var loaderWrapper = document.getElementsByClassName("loaderWrapper");
+                loaderWrapper[0].style.visibility = "hidden";
+                loaderWrapper[0].innerHTML = "";
                 return;
             }
 
@@ -117,6 +128,11 @@ var burgers = {};
                 parent: div
             });
 
+            var loader = document.getElementsByClassName("loader");
+            loader[0].style.visibility = "hidden";
+            var loaderWrapper = document.getElementsByClassName("loaderWrapper");
+            loaderWrapper[0].style.visibility = "hidden";
+            loaderWrapper[0].innerHTML = "";
             // create userList (new array of objects) to have only the desired properties of obj.webUserList. 
             // Add the properties in the order you want them to appear in the HTML table.  
             var burgerList = [];
@@ -154,8 +170,8 @@ var burgers = {};
                 // For this, we use the back tick and it works. 
                 burgerList[i].update = "<img src='" + CRUD_icons.update + "' alt='update icon' onclick='burgers.updateUI(`" +
                         list[i].burgerName + "`, `" + targetId + "` )' />";
-                burgerList[i].delete = "<img src='" + CRUD_icons.delete + "' alt='delete icon' onclick='burgers.delete(" +
-                        burgerList[i].userId + ",this)'  />";
+                burgerList[i].delete = "<img src='" + CRUD_icons.delete + "' alt='delete icon' onclick='burgers.delete(`" +
+                        list[i].burgerName + "`, this )' />";
             }
 
             // add click sortable HTML table to the content area
@@ -183,20 +199,20 @@ var burgers = {};
 
 // invoke a web API passing in userId to say which record you want to delete. 
 // but also remove the row (of the clicked upon icon) from the HTML table -- if Web API sucessful... 
-    burgers.delete = function (userId, icon) {
-        if (confirm("Do you really want to delete user " + userId + "? ")) {
+    burgers.delete = function (burgerName, icon) {
+        if (confirm("Do you really want to delete burger " + burgerName + "? ")) {
             console.log("icon that was passed into JS function is printed on next line");
             console.log(icon);
 
             ajax2({
-                url: "webAPIs/deleteBurgerAPI.jsp?deleteId=" + userId,
+                url: "webAPIs/deleteBurgerAPI.jsp?deleteName=" + burgerName,
                 successFn: success,
                 errorId: "deleteErrorMsgId"
             });
 
             function success(obj) {
                 if (obj.errorMsg.length === 0) {
-                    obj.errorMsg = "Web User " + userId + " was deleted!";
+                    obj.errorMsg = "burgerName " + burgerName + " was deleted!";
 
                     // icon's parent is cell whose parent is row 
                     var dataRow = icon.parentNode.parentNode;
@@ -233,11 +249,7 @@ var burgers = {};
             <div id="insertArea">
                 <div id="ajaxError">&nbsp;</div>
                 <table>
-                    <tr ${webUserIdRowStyle}>
-                        <td>Web User Id</td>
-                        <td><input type="text"  id="webUserId" disabled /></td>
-                        <td id="webUserIdError" class="error"></td> 
-                    </tr>
+                  
                     <tr>
                         <td>Burger Name</td>
                         <td><input type="text"  id="burgerName" disabled /></td>
@@ -259,8 +271,15 @@ var burgers = {};
                         <td><input type="text" id="Star" /></td>
                         <td id="StarError" class="error"></td>
                     </tr>
-                    <tr>
-           
+                   <tr>
+                        <td>Web User</td>
+                        <td>
+                            <select id="rolePickList">
+                            <!-- JS code will make ajax call to get all the roles 
+                            then populate this select tag's options with those roles -->
+                            </select>
+                        </td>
+                        <td id="webUserIdError" class="error"></td> 
                         <td id="userRoleIdError" class="error"></td>
                     </tr>
                     <tr>
@@ -330,16 +349,23 @@ var burgers = {};
 
     function dbDataToUI(obj) {
 
-        var burgerObj = obj;
-        console.log("burger object to update " + obj);
+        var burgerObj = obj.burger;
+        var idList = obj.userInfo.webUserList;
 
-
-        document.getElementById("webUserId").value = burgerObj.webUserId;
+        console.log("burger object to update " + burgerObj);
         document.getElementById("burgerName").value = burgerObj.burgerName;
         document.getElementById("burgerImage").value = burgerObj.image;
         document.getElementById("burgerDescription").value = burgerObj.burgerDescription;
         document.getElementById("Star").value = burgerObj.stars;
-        console.log("selected role id is " + burgerObj.userRoleId);
+        console.log("webUserId" + burgerObj.webUserId);
+
+        Utils.makePickList({
+            id: "rolePickList", // id of <select> tag in UI
+            list: idList, // JS array that holds objects to populate the select list
+            valueProp: "webUserId", // field name of objects in list that hold the values of the options
+            keyProp: "webUserId", // field name of objects in list that hold the keys of the options
+            selectedKey: burgerObj.webUserId  // key that is to be pre-selected (optional)
+        });
 
     }
     ;
@@ -349,11 +375,12 @@ var burgers = {};
         // New code for handling role pick list.
         var ddList = document.getElementById("rolePickList");
         console.log("getUserDataFromUI");
+        console.log(" value of pick list is " + ddList.options[ddList.selectedIndex].key);
 
         // create a user object from the values that the user has typed into the page.
         var userInputObj = {
 
-            "webUserId": document.getElementById("webUserId").value,
+            "webUserId": ddList.options[ddList.selectedIndex].value,
             "burgerName": document.getElementById("burgerName").value,
             "image": document.getElementById("burgerImage").value,
             "burgerDescription": document.getElementById("burgerDescription").value,

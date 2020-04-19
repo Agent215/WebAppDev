@@ -215,7 +215,7 @@ public class DbMods {
                     "ORDER BY web_user_id ";
              */
             String sql = "UPDATE web_user SET user_email=?, user_password=?, membership_fee=?, birthday=?, "
-                    + "user_role_id=? WHERE web_user_id = ?";
+                    + "user_role_id=?, image = ? WHERE web_user_id = ?";
 
             // PrepStatement is Sally's wrapper class for java.sql.PreparedStatement
             // Only difference is that Sally's class takes care of encoding null 
@@ -228,7 +228,8 @@ public class DbMods {
             pStatement.setBigDecimal(3, ValidationUtils.decimalConversion(inputData.membershipFee));
             pStatement.setDate(4, ValidationUtils.dateConversion(inputData.birthday));
             pStatement.setInt(5, ValidationUtils.integerConversion(inputData.userRoleId));
-            pStatement.setInt(6, ValidationUtils.integerConversion(inputData.webUserId));
+            pStatement.setInt(7, ValidationUtils.integerConversion(inputData.webUserId));
+            pStatement.setString(6, inputData.image);
 
             // here the SQL statement is actually executed
             int numRows = pStatement.executeUpdate();
@@ -250,7 +251,7 @@ public class DbMods {
 
         } // customerId is not null and not empty string.
         return errorMsgs;
-    } // update
+    } // 
 
 } // class
 

@@ -252,7 +252,52 @@ var content = `
                 </div>
                 <div class='stopFloat'></div>
             </div>
+    <div class="row">
+                <div class='column column90'>
+                    <div>
+                       <h2>HW 8 Update</h2>
+                        <p>
+                       
+                            In This homework I learned how to write an updated database API and implement a user interface for this feature. 
+                            I learned how to validate, parse and validate user input for insertion into a mysql database. I also learned how to implement a IIFE function.  
+                            Initially when i did this assignment i did not have the validate data function for my burger table. 
+                            The hardest part for me in this assignment was just understanding all the code refactoring I had to do to my project.
+                            I did not do the insert homework so I had to understand how that code worked.
+                            The easiest part was writing the web jsp pages, because they just essentially called all the other parts.				
+                        </p>
+                        
+                        <p>
+                            To view the update user API click <a href="webAPIs/updateUserAPI.jsp">here</a> 
+                            To view the update burger API click <a href="webAPIs/updateBurgerAPI.jsp">here</a> 
+                            In order to use the above urls. You must URL tamper a new object. 
+                            You can use the links below to see how that object should be formed.
+                            Click <a href="webAPIs/listUsersAPI.jsp">here</a> for the Web API that lists all the users.
+                            Click <a href="webAPIs/listBurgersAPI.jsp">here</a> for the Web API that lists all the burgers.
+				
+                        </p>
+                     
 
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
+
+            <div class="row">
+                <div class='column column90'>
+                    <div>
+                       <h2>HW 9 Delete</h2>
+                        <p>
+                           
+		
+
+                        </p>
+                        
+          
+
+                    </div>
+                </div>
+                <div class='stopFloat'></div>
+            </div>
     </div>
     `;
         // get rid of burger image when we change to blog
