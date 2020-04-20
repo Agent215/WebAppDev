@@ -3,15 +3,49 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/webUser/DbMods.java</file>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/users.js</file>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/burgers/StringData.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/Utils.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/register.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/role/StringDataList.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/MakeTable.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/makeTypeFlipCard.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/tutorial/download/demo.html</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/index.html</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/burgers/StringDataList.java</file>
             <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/burgers.js</file>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/dbUtils/ValidationUtils.java</file>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/updateBurgerAPI.jsp</file>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/burgers/DbMods.java</file>
-            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/home.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/styles/FlipStyles.css</file>
             <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/webUser/StringData.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/routeFw.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/tutorial/index.html</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/MakeTableBuilder.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/logonAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/updateUserAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/view/WebUserView.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/blog.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/getUserWithRolesAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/updateBurgerAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/burgers/BurgersWithID.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/home.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/CRUD_icons.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/tutorial/download/makeTypeFlipCard.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/findBurgerByName.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/deleteBurgerAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/getProfileAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/role/StringData.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/login.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/view/RoleView.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/webUser/StringDataList.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/webUser/WebUserWithRoles.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/styles/responsive_styles.css</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/model/burgers/DbMods.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/webAPIs/deleteUserAPI.jsp</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/ajax2.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/users.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/view/webIdView.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/js/components/profile.js</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/styles/logon.css</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/src/java/dbUtils/ValidationUtils.java</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/styles/mainStyle.css</file>
+            <file>file:/C:/Users/brahm/Documents/3308_backups/WebAppDev/Schultz_web/web/tutorial/download/demoJson.json</file>
         </group>
     </open-files>
 </project-private>

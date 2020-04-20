@@ -39,9 +39,12 @@ function makeTypeFlipCard(params) {
         return;
     }
 
+    // set inner html to nothing
+    document.getElementById(params.id).innerHTML = "";
+
     // add data from json/javascript object
     var obj = params.obj;
-  
+
     console.log(obj);
     //paramaterize object list so that this is not dependent on specific object key values
     // we should probably make this a loop based on object length for better reusbility
@@ -55,13 +58,25 @@ function makeTypeFlipCard(params) {
     // set container id 
     var flipCardDiv = document.getElementById(params.id);
     var flipCard = document.createElement("div");
-
+    var focusing = false;
     // Event handler for when we are focusing on this card to start typing text
     flipCard.addEventListener('click', function () {
 
-        console.log("focusing");
-        flipCard.classList.add("onFocus");
-        typeWriter();
+        // if we are not focusing then focus other wise unfocus
+        if (focusing === false) {
+            console.log("focusing");
+            focusing = true;
+            flipCard.classList.add("onFocus");
+            typeWriter();
+        } else {
+
+
+            console.log("clicked outside");
+            flipCard.classList.remove("onFocus");
+            focusing = false;
+            resetText();
+        }
+
     }
     );
 
@@ -74,8 +89,17 @@ function makeTypeFlipCard(params) {
             console.log("clicked outside");
             flipCard.classList.remove("onFocus");
             resetText();
-        } else {
-            console.log("clicked inside");
+            focusing = false;
+
+        } else if ((!isClickInside )&& (focusing === true)) {
+
+            console.log("clicked outside");
+            flipCard.classList.remove("onFocus");
+            resetText();
+            focusing = false;
+
+
+
         }
     });
 
@@ -142,6 +166,8 @@ function makeTypeFlipCard(params) {
     flipCardBack.appendChild(email);
     flipCardBack.appendChild(rating);
     rating.innerHTML = "Rating";
+    email.style.margin = "0px";
+    rating.style.margin = "0px";
 
     // add the filled in stars
     for (var k = 0; k < obj["" + fifthKey]; k++) {
@@ -209,7 +235,7 @@ function makeTypeFlipCard(params) {
     //set color of back of card
     o.setBackColor = function (colorin) {
 
-        console.log("changing background color to :" + colorin)
+        console.log("changing background color to :" + colorin);
         backgroundColor = colorin;
         flipCardBack.style.backgroundColor = backgroundColor;
     };
@@ -222,6 +248,11 @@ function makeTypeFlipCard(params) {
     //TODO set font color
     o.setFontColor = function (colorin) {
         fontColor = colorin;
+        console.log("changing font color to :" + colorin);
+        name.style.color = fontColor;
+        desc.style.color = fontColor;
+        email.style.color = fontColor;
+        rating.style.color = fontColor;
     };
 
     return o;

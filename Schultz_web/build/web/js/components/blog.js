@@ -288,7 +288,17 @@ var content = `
                        <h2>HW 9 Delete</h2>
                         <p>
                            
-		
+		In the Homework I learned how to delete a user from the database. This was a very simple homework as most of the structure for this code already existed.
+                All I had to do was add a delete API for the user and the burger. Also I had a delete function within each model's DbMods file. 
+                The difficult part of this was making sure the error messages were displayed correctly and user friendly. 
+                I did not learn much new tech here , as i was just reusing what i have already learned. 
+                So i would say this was the easiest homework of the semester. 
+                </br>
+                Click <a href="webAPIs/deleteUserAPI.jsp">here</a> for the Web API that deletes a user
+                </br>
+                Click <a href="webAPIs/deleteBurgerAPI.jsp">here</a> for the Web API that deletes a burger
+
+
 
                         </p>
                         

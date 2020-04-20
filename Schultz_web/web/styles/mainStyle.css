@@ -19,7 +19,7 @@ html, body {
 }
 
 body { 
-    background-color: #E7C4A8;
+    background-color: #e0b08b;
     color: black;  
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
 }
@@ -29,9 +29,14 @@ body {
 #intro {
     padding: 0px;
     padding-bottom: 10px;
+    padding-left: 50px;
     width: 100%;
     font-size: 30px;
     text-align: center;
+    font-size:40px;
+    font-style: normal;
+    font-family: Impact, Charcoal, sans-serif;
+    letter-spacing: 2.5px; 
 }
 
 .header{
@@ -69,6 +74,23 @@ body {
     right: -500px;  
     visibility: hidden; 
     transition: right 0.5s ease 0s;
+}
+.burgerComps {
+
+    padding-top: 5%;
+
+
+}
+
+#featuredBurgers{
+
+    padding-right: 10px;
+    padding-top: 3%;
+    font-size:40px;
+    text-align: center;
+    font-style: normal;
+    font-family: Impact, Charcoal, sans-serif;
+    letter-spacing: 2.5px; 
 }
 
 #footer { 
