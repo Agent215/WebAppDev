@@ -141,7 +141,7 @@ home.display = function (id) {
                 <div class='column column90'>
                     <div>
                         <div id="intro">
-                            <strong>Whats it all About?</strong> 
+                            <strong>What's it all About?</strong> 
                         </div>
                         <p>
                             This site is a homage to the greatest culinary contribution The United States has ever made. 

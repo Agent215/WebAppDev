@@ -1,68 +1,16 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TypeWriter Flipcard</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--bring in style sheets-->
-        <link href="../styles/mainStyle.css" rel="stylesheet" type="text/css" />  
-        <!-- using responsive design code provided in class -->
-        <link href ="../styles/responsive_styles.css" rel ="stylesheet" type="text/css"/>
-        <link href ="../styles/clickSort.css" rel="stylesheet" type="text/css"/>
-        <link href ="../styles/logon.css" rel="stylesheet" type="text/css"/>
-        <link href ="../styles/loader.css" rel="stylesheet" type="text/css"/>
-        <link href ="../styles/FlipStyles.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            .row {
-                box-sizing: border-box; 
-                width: 100%;
-                padding: 2ex 0ex;
-                padding-bottom: 10px;
-                background-color: #CAEAA7; 
-                margin-bottom: 4ex; 
-                box-shadow: 5px 5px 5px grey;
-            }
-            .column {
-                box-sizing: border-box; 
-                padding: 1ex 2ex; 
-            }
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-            .column img {
-                width:100%;
-                border-radius: 8px;
-                box-shadow: 5px 5px 5px grey;
-            }
-            
-            #content{
-                padding-top: 10%;
-            }
+var tutorial = {};
 
-        </style>
-    </head>
-    <body>
-        <!-- nav bar-->
-        <div class="titleNav">
-            <div id="pageTitle">
-                Tutorial
-            </div>
-            <!-- navigation bar is a drop down bar for now-->
-            <div id="nav">
-                <div class="dropdown">
-                    <a href="../#/home"><img title="Home" src="../icons/dark/home_icon_H24.png" alt="Home"></a>
-                </div>
+tutorial.display = function (id) {
 
-            </div>
-        </div>  <!-- end of titleNav -->
-
-        <div id="content">
-
-            <div class="row">
+    // ` this is a "back tick". Use it to define multi-line strings in JavaScript.
+    var content = `  
+    <div class="row">
                 <div class='column column90'>
                     <h2>TypeWriter Flipcard Component</h2>
                     <p>
@@ -183,6 +131,9 @@ and open the template in the editor.
                         <li> You can also change the speed the text types across the card, higher is slower</li>
                     </ul>
 
+                    <br>
+                    <br>
+
                     <pre>
            
             &lt; type="button" onclick="card1.setSpeed(300)">slow text&gt;
@@ -197,12 +148,17 @@ and open the template in the editor.
 
                 </div>
                 <div class='stopFloat'></div>
-            </div>
-            <div id="footer">
-                <a href="https://www.linkedin.com/in/abraham-schultz-15099044/">Abraham Schultz</a>
-            </div>
-        </div>
+            </div> `;
+    document.getElementById(id).innerHTML = content;
+
+    // use strict to help with debugging 
+    "use strict";
+
+   
+    
+    
 
 
-    </body>
-</html>
+    
+}
+;
